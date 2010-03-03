@@ -1,0 +1,9 @@
+MO draw_logic NULL draw_logic.v vlg6B/draw__logic.bin 1267574962
+MO tile_rom NULL tile_rom.v vlg23/tile__rom.bin 1267574962
+MO vgamult NULL vgamult.v vlg00/vgamult.bin 1267574962
+MO sprite_mem NULL sprite_mem.v vlg11/sprite__mem.bin 1267574962
+MO name_ram NULL name_ram.v vlg3C/name__ram.bin 1267574962
+MO vga_clk NULL vga_clk.v vlg5F/vga__clk.bin 1267574962
+MO sprite NULL sprite.v vlg53/sprite.bin 1267574962
+MO vga_logic NULL vga_logic.v vlg43/vga__logic.bin 1267574962
+MO main_logic NULL main_logic.v vlg1E/main__logic.bin 1267574962

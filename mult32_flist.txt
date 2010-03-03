@@ -1,0 +1,12 @@
+# Output products list for <mult32>
+mult32.asy
+mult32.ngc
+mult32.sym
+mult32.v
+mult32.veo
+mult32.vhd
+mult32.vho
+mult32.xco
+mult32_flist.txt
+mult32_mult_gen_v10_1_xst_1.ngc_xst.xrpt
+mult32_xmdf.tcl

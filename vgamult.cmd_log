@@ -1,0 +1,35 @@
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+ngdbuild -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vgamult.ngc" vgamult.ngd
+map -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vgamult_map.ncd vgamult.ngd vgamult.pcf
+par -ise "D:/DemoProject/DemoProject.ise" -w -intstyle ise -ol std -t 1 vgamult_map.ncd vgamult.ncd vgamult.pcf
+trce -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vgamult vgamult.ncd -o vgamult.twr vgamult.pcf -ucf D:/ece554/vgamult.ucf
+bitgen -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -f vgamult.ut vgamult.ncd
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+ngdbuild -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vgamult.ngc" vgamult.ngd
+map -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vgamult_map.ncd vgamult.ngd vgamult.pcf
+par -ise "D:/DemoProject/DemoProject.ise" -w -intstyle ise -ol std -t 1 vgamult_map.ncd vgamult.ncd vgamult.pcf
+trce -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vgamult vgamult.ncd -o vgamult.twr vgamult.pcf -ucf vgamult.ucf
+bitgen -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -f vgamult.ut vgamult.ncd
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+ngdbuild -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vgamult.ngc" vgamult.ngd
+map -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vgamult_map.ncd vgamult.ngd vgamult.pcf
+par -ise "D:/DemoProject/DemoProject.ise" -w -intstyle ise -ol std -t 1 vgamult_map.ncd vgamult.ncd vgamult.pcf
+trce -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vgamult vgamult.ncd -o vgamult.twr vgamult.pcf -ucf vgamult.ucf
+bitgen -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -f vgamult.ut vgamult.ncd
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+ngdbuild -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vgamult.ngc" vgamult.ngd
+map -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vgamult_map.ncd vgamult.ngd vgamult.pcf
+par -ise "D:/DemoProject/DemoProject.ise" -w -intstyle ise -ol std -t 1 vgamult_map.ncd vgamult.ncd vgamult.pcf
+trce -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vgamult vgamult.ncd -o vgamult.twr vgamult.pcf -ucf vgamult.ucf
+bitgen -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -f vgamult.ut vgamult.ncd
+xst -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -ifn "D:/DemoProject/vgamult.xst" -ofn "D:/DemoProject/vgamult.syr"
+ngdbuild -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vgamult.ngc" vgamult.ngd
+map -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vgamult_map.ncd vgamult.ngd vgamult.pcf
+par -ise "D:/DemoProject/DemoProject.ise" -w -intstyle ise -ol std -t 1 vgamult_map.ncd vgamult.ncd vgamult.pcf
+trce -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vgamult vgamult.ncd -o vgamult.twr vgamult.pcf -ucf vgamult.ucf
+bitgen -ise "D:/DemoProject/DemoProject.ise" -intstyle ise -f vgamult.ut vgamult.ncd

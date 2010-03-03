@@ -1,0 +1,12 @@
+# Output products list for <mem>
+mem.asy
+mem.ngc
+mem.sym
+mem.v
+mem.veo
+mem.vhd
+mem.vho
+mem.xco
+mem_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+mem_flist.txt
+mem_xmdf.tcl

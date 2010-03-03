@@ -1,0 +1,748 @@
+Release 10.1.03 - xst K.39 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/DemoProject/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to D:/DemoProject/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: vgamult.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vgamult.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vgamult"
+Output Format                      : NGC
+Target Device                      : xc2vp30-6-ff896
+
+---- Source Options
+Top Module Name                    : vgamult
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : vgamult.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "tile_rom.v" in library work
+Compiling verilog file "sprite_mem.v" in library work
+Module <tile_rom> compiled
+Compiling verilog file "name_ram.v" in library work
+Module <sprite_mem> compiled
+Compiling verilog file "sprite.v" in library work
+Module <name_ram> compiled
+Compiling verilog file "draw_logic.v" in library work
+Module <sprite> compiled
+Compiling verilog file "vga_logic.v" in library work
+Module <draw_logic> compiled
+Compiling verilog file "vga_clk.v" in library work
+Module <vga_logic> compiled
+Compiling verilog file "main_logic.v" in library work
+Module <vga_clk> compiled
+Compiling verilog file "vgamult.v" in library work
+Module <main_logic> compiled
+Module <vgamult> compiled
+No errors in compilation
+Analysis of file <"vgamult.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <vgamult> in library <work>.
+
+Analyzing hierarchy for module <vga_clk> in library <work>.
+
+Analyzing hierarchy for module <vga_logic> in library <work>.
+
+Analyzing hierarchy for module <main_logic> in library <work>.
+
+Analyzing hierarchy for module <draw_logic> in library <work>.
+
+Analyzing hierarchy for module <sprite> in library <work> with parameters.
+	SPRITE_NUM = "sprite0.mem"
+
+Analyzing hierarchy for module <name_ram> in library <work> with parameters.
+	ADDR_WIDTH = "00000000000000000000000000001011"
+	DATA_WIDTH = "00000000000000000000000000000010"
+	ROM_DATA_FILE = "background.mem"
+
+Analyzing hierarchy for module <tile_rom> in library <work> with parameters.
+	ADDR_WIDTH = "00000000000000000000000000000111"
+	DATA_WIDTH = "00000000000000000000000000001000"
+	ROM_DATA_FILE = "tiles.mem"
+
+Analyzing hierarchy for module <sprite_mem> in library <work> with parameters.
+	ROM_DATA_FILE = "sprite0.mem"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <vgamult>.
+WARNING:Xst:852 - "vgamult.v" line 42: Unconnected input port 'data_in' of instance 'main1' is tied to GND.
+WARNING:Xst:852 - "vgamult.v" line 42: Unconnected input port 'load_pos' of instance 'main1' is tied to GND.
+WARNING:Xst:852 - "vgamult.v" line 42: Unconnected input port 'load_att' of instance 'main1' is tied to GND.
+Module <vgamult> is correct for synthesis.
+ 
+Analyzing module <vga_clk> in library <work>.
+Module <vga_clk> is correct for synthesis.
+ 
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <CLKIN_IBUFG_INST> in unit <vga_clk>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <CLKIN_IBUFG_INST> in unit <vga_clk>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <CLKIN_IBUFG_INST> in unit <vga_clk>.
+    Set user-defined property "CLKDV_DIVIDE =  2.0000000000000000" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "CLKFX_DIVIDE =  8" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "CLKFX_MULTIPLY =  2" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "CLKIN_DIVIDE_BY_2 =  FALSE" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "CLKIN_PERIOD =  10.0000000000000000" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "CLKOUT_PHASE_SHIFT =  NONE" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "CLK_FEEDBACK =  1X" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "DESKEW_ADJUST =  SYSTEM_SYNCHRONOUS" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "DFS_FREQUENCY_MODE =  LOW" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "DLL_FREQUENCY_MODE =  LOW" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "DSS_MODE =  NONE" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "DUTY_CYCLE_CORRECTION =  TRUE" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "FACTORY_JF =  C080" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "PHASE_SHIFT =  0" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "SIM_MODE =  SAFE" for instance <DCM_INST> in unit <vga_clk>.
+    Set user-defined property "STARTUP_WAIT =  FALSE" for instance <DCM_INST> in unit <vga_clk>.
+Analyzing module <vga_logic> in library <work>.
+Module <vga_logic> is correct for synthesis.
+ 
+Analyzing module <main_logic> in library <work>.
+Module <main_logic> is correct for synthesis.
+ 
+Analyzing module <draw_logic> in library <work>.
+Module <draw_logic> is correct for synthesis.
+ 
+Analyzing module <name_ram> in library <work>.
+	ADDR_WIDTH = 32'sb00000000000000000000000000001011
+	DATA_WIDTH = 32'sb00000000000000000000000000000010
+	ROM_DATA_FILE = "background.mem"
+INFO:Xst:2546 - "name_ram.v" line 30: reading initialization file "background.mem".
+Module <name_ram> is correct for synthesis.
+ 
+Analyzing module <tile_rom> in library <work>.
+	ADDR_WIDTH = 32'sb00000000000000000000000000000111
+	DATA_WIDTH = 32'sb00000000000000000000000000001000
+	ROM_DATA_FILE = "tiles.mem"
+INFO:Xst:2546 - "tile_rom.v" line 30: reading initialization file "tiles.mem".
+Module <tile_rom> is correct for synthesis.
+ 
+Analyzing module <sprite> in library <work>.
+	SPRITE_NUM = "sprite0.mem"
+Module <sprite> is correct for synthesis.
+ 
+Analyzing module <sprite_mem> in library <work>.
+	ROM_DATA_FILE = "sprite0.mem"
+INFO:Xst:2546 - "sprite_mem.v" line 28: reading initialization file "sprite0.mem".
+WARNING:Xst:2319 - "sprite_mem.v" line 28: Signal MY_ROM in initial block is partially initialized. The initialization will be ignored.
+INFO:Xst:1607 - Contents of array <MY_ROM> may be accessed with an index that does not cover the full array size.
+Module <sprite_mem> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <vga_logic>.
+    Related source file is "vga_logic.v".
+    Found 10-bit register for signal <pixel_x>.
+    Found 10-bit register for signal <pixel_y>.
+    Found 10-bit comparator greater for signal <blank$cmp_gt0000> created at line 59.
+    Found 10-bit comparator greater for signal <blank$cmp_gt0001> created at line 59.
+    Found 10-bit comparator greater for signal <hsync$cmp_gt0000> created at line 57.
+    Found 10-bit comparator less for signal <hsync$cmp_lt0000> created at line 57.
+    Found 10-bit adder for signal <next_x_cnt$addsub0000> created at line 38.
+    Found 10-bit adder for signal <next_y_cnt$addsub0000> created at line 39.
+    Found 10-bit comparator greater for signal <vsync$cmp_gt0000> created at line 58.
+    Found 10-bit comparator less for signal <vsync$cmp_lt0000> created at line 58.
+    Found 10-bit register for signal <x_cnt>.
+    Found 10-bit register for signal <y_cnt>.
+    Summary:
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <vga_logic> synthesized.
+
+
+Synthesizing Unit <name_ram>.
+    Related source file is "name_ram.v".
+WARNING:Xst:1781 - Signal <MY_ROM> is used but never assigned. Tied to default value.
+    Found 2048x2-bit ROM for signal <$varindex0000> created at line 31.
+    Found 2-bit register for signal <rdata>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   2 D-type flip-flop(s).
+Unit <name_ram> synthesized.
+
+
+Synthesizing Unit <tile_rom>.
+    Related source file is "tile_rom.v".
+WARNING:Xst:1781 - Signal <MY_ROM> is used but never assigned. Tied to default value.
+    Found 128x8-bit ROM for signal <$varindex0000> created at line 31.
+    Found 8-bit register for signal <rdata>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <tile_rom> synthesized.
+
+
+Synthesizing Unit <sprite_mem>.
+    Related source file is "sprite_mem.v".
+WARNING:Xst:653 - Signal <MY_ROM> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+    Found 8-bit register for signal <rdata>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <sprite_mem> synthesized.
+
+
+Synthesizing Unit <vga_clk>.
+    Related source file is "vga_clk.v".
+Unit <vga_clk> synthesized.
+
+
+Synthesizing Unit <draw_logic>.
+    Related source file is "draw_logic.v".
+WARNING:Xst:646 - Signal <tile<1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 10-bit comparator less for signal <pixel_r$cmp_lt0000> created at line 48.
+    Found 10-bit comparator less for signal <pixel_r$cmp_lt0001> created at line 49.
+    Summary:
+	inferred   2 Comparator(s).
+Unit <draw_logic> synthesized.
+
+
+Synthesizing Unit <sprite>.
+    Related source file is "sprite.v".
+WARNING:Xst:647 - Input <data_in<31:17>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <v_flip> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <h_flip> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <depth> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <pixel_g>.
+    Found 8-bit register for signal <pixel_r>.
+    Found 1-bit register for signal <obj_on>.
+    Found 8-bit register for signal <pixel_b>.
+    Found 10-bit register for signal <addr>.
+    Found 9-bit register for signal <current_x>.
+    Found 8-bit register for signal <current_y>.
+    Found 11-bit adder for signal <inrange_x$add0000> created at line 84.
+    Found 12-bit comparator greater for signal <inrange_x$cmp_gt0000> created at line 84.
+    Found 11-bit subtractor for signal <inrange_x$sub0000> created at line 84.
+    Found 10-bit adder for signal <inrange_y$add0000> created at line 85.
+    Found 11-bit comparator greater for signal <inrange_y$cmp_gt0000> created at line 85.
+    Found 10-bit subtractor for signal <inrange_y$sub0000> created at line 85.
+    Found 5-bit subtractor for signal <lower>.
+    Found 5-bit subtractor for signal <upper>.
+    Found 1-bit register for signal <visibility>.
+    Summary:
+	inferred  53 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <sprite> synthesized.
+
+
+Synthesizing Unit <main_logic>.
+    Related source file is "main_logic.v".
+Unit <main_logic> synthesized.
+
+
+Synthesizing Unit <vgamult>.
+    Related source file is "vgamult.v".
+WARNING:Xst:646 - Signal <clkin_ibufg_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <vgamult> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 128x8-bit ROM                                         : 1
+ 2048x2-bit ROM                                        : 1
+# Adders/Subtractors                                   : 8
+ 10-bit adder                                          : 3
+ 10-bit subtractor                                     : 1
+ 11-bit adder                                          : 1
+ 11-bit subtractor                                     : 1
+ 5-bit subtractor                                      : 2
+# Registers                                            : 15
+ 1-bit register                                        : 2
+ 10-bit register                                       : 5
+ 2-bit register                                        : 1
+ 8-bit register                                        : 6
+ 9-bit register                                        : 1
+# Comparators                                          : 10
+ 10-bit comparator greater                             : 4
+ 10-bit comparator less                                : 4
+ 11-bit comparator greater                             : 1
+ 12-bit comparator greater                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2vp30.nph' in environment C:\Xilinx\10.1\ISE.
+WARNING:Xst:2404 -  FFs/Latches <pixel_x<9:9>> (without init value) have a constant value of 0 in block <vga_logic>.
+WARNING:Xst:2404 -  FFs/Latches <pixel_y<9:9>> (without init value) have a constant value of 0 in block <vga_logic>.
+WARNING:Xst:2404 -  FFs/Latches <rdata<7:0>> (without init value) have a constant value of 0 in block <sprite_mem>.
+WARNING:Xst:2404 -  FFs/Latches <current_x<8:0>> (without init value) have a constant value of 0 in block <sprite>.
+WARNING:Xst:2404 -  FFs/Latches <current_y<7:0>> (without init value) have a constant value of 0 in block <sprite>.
+
+Synthesizing (advanced) Unit <name_ram>.
+INFO:Xst - The ROM <Mrom__varindex0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <rdata>.
+INFO:Xst - The RAM <Mrom__varindex0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 2-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <rdata>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <name_ram> synthesized (advanced).
+
+Synthesizing (advanced) Unit <tile_rom>.
+INFO:Xst - The ROM <Mrom__varindex0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <rdata>.
+INFO:Xst - The RAM <Mrom__varindex0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <rdata>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <tile_rom> synthesized (advanced).
+INFO:Xst:2261 - The FF/Latch <y_cnt_1> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_0> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_2> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_1> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_3> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_2> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_4> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_3> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_5> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_4> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_6> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_5> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_7> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_6> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_8> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_7> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_1> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_0> 
+INFO:Xst:2261 - The FF/Latch <y_cnt_9> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_8> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_2> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_1> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_3> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_2> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_4> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_3> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_5> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_4> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_6> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_5> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_7> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_6> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_8> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_7> 
+INFO:Xst:2261 - The FF/Latch <x_cnt_9> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_8> 
+WARNING:Xst:1710 - FF/Latch <pixel_b_5> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_b_4> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_b_3> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_b_2> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_b_1> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_b_0> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_g_4> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_g_3> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_g_2> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_g_1> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_g_0> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_r_4> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_r_3> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_r_2> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_r_1> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_r_0> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <visibility> (without init value) has a constant value of 1 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_r_5> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_r_6> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_r_7> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_g_5> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_g_6> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_g_7> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <S0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <addr_0> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_1> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_2> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_3> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_4> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_5> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_6> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_7> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_8> of sequential type is unconnected in block <S0>.
+WARNING:Xst:2677 - Node <addr_9> of sequential type is unconnected in block <S0>.
+WARNING:Xst:1290 - Hierarchical block <M0> is unconnected in block <S0>.
+   It will be removed from the design.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 128x8-bit single-port block RAM                       : 1
+ 2048x2-bit single-port block RAM                      : 1
+# Adders/Subtractors                                   : 8
+ 10-bit adder                                          : 3
+ 10-bit subtractor                                     : 1
+ 11-bit adder                                          : 1
+ 11-bit subtractor                                     : 1
+ 5-bit subtractor                                      : 2
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+# Comparators                                          : 10
+ 10-bit comparator greater                             : 4
+ 10-bit comparator less                                : 4
+ 11-bit comparator greater                             : 1
+ 12-bit comparator greater                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <pixel_r_5> in Unit <sprite> is equivalent to the following 7 FFs/Latches, which will be removed : <pixel_r_6> <pixel_r_7> <pixel_g_5> <pixel_g_6> <pixel_g_7> <pixel_b_6> <pixel_b_7> 
+WARNING:Xst:1710 - FF/Latch <pixel_r_5> (without init value) has a constant value of 0 in block <sprite>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <addr_0> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_1> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_2> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_3> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_4> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_5> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_6> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_7> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_8> of sequential type is unconnected in block <sprite>.
+WARNING:Xst:2677 - Node <addr_9> of sequential type is unconnected in block <sprite>.
+
+Optimizing unit <vgamult> ...
+
+Optimizing unit <vga_logic> ...
+
+Optimizing unit <sprite> ...
+
+Optimizing unit <main_logic> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vgamult, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 21
+ Flip-Flops                                            : 21
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : vgamult.ngr
+Top Level Output File Name         : vgamult
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 31
+
+Cell Usage :
+# BELS                             : 64
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 12
+#      LUT3                        : 11
+#      LUT3_L                      : 1
+#      LUT4                        : 28
+#      LUT4_D                      : 3
+#      LUT4_L                      : 5
+#      MUXF5                       : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 21
+#      FDC                         : 20
+#      FDR                         : 1
+# RAMS                             : 2
+#      RAMB16_S2                   : 1
+#      RAMB16_S9                   : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 31
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      OBUF                        : 29
+# DCMs                             : 1
+#      DCM                         : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp30ff896-6 
+
+ Number of Slices:                       34  out of  13696     0%  
+ Number of Slice Flip Flops:             21  out of  27392     0%  
+ Number of 4 input LUTs:                 61  out of  27392     0%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    556     5%  
+ Number of BRAMs:                         2  out of    136     1%  
+ Number of GCLKs:                         2  out of     16    12%  
+ Number of DCMs:                          1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)      | Load  |
+-----------------------------------+----------------------------+-------+
+clk_100mhz                         | vga_clk_gen1/DCM_INST:CLKFX| 20    |
+clk_100mhz                         | vga_clk_gen1/DCM_INST:CLK0 | 1     |
+-----------------------------------+----------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+_or0000(_or00001:O)                | NONE(vgal1/x_cnt_4)    | 20    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 1.195ns (Maximum Frequency: 836.995MHz)
+   Minimum input arrival time before clock: 3.092ns
+   Maximum output required time after clock: 7.106ns
+   Maximum combinational path delay: 6.756ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100mhz'
+  Clock period: 1.195ns (frequency: 836.995MHz)
+  Total number of paths / destination ports: 364 / 20
+-------------------------------------------------------------------------
+Delay:               4.779ns (Levels of Logic = 5)
+  Source:            vgal1/x_cnt_0 (FF)
+  Destination:       vgal1/y_cnt_3 (FF)
+  Source Clock:      clk_100mhz rising 0.3X
+  Destination Clock: clk_100mhz rising 0.3X
+
+  Data Path: vgal1/x_cnt_0 to vgal1/y_cnt_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.374   0.667  vgal1/x_cnt_0 (vgal1/x_cnt_0)
+     LUT4:I0->O            3   0.313   0.495  vgal1/next_x_cnt_cmp_eq00007 (vgal1/next_x_cnt_cmp_eq00007)
+     LUT4:I2->O           15   0.313   0.876  vgal1/next_x_cnt_cmp_eq000024 (vgal1/next_x_cnt_cmp_eq0000)
+     LUT2:I0->O            1   0.313   0.440  vgal1/next_y_cnt<2>31 (vgal1/N14)
+     LUT4_L:I3->LO         1   0.313   0.128  vgal1/next_y_cnt<3>_SW0 (N9)
+     LUT4:I2->O            1   0.313   0.000  vgal1/next_y_cnt<3> (vgal1/next_y_cnt<3>)
+     FDC:D                     0.234          vgal1/y_cnt_3
+    ----------------------------------------
+    Total                      4.779ns (2.173ns logic, 2.606ns route)
+                                       (45.5% logic, 54.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.092ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       main1/S0/obj_on (FF)
+  Destination Clock: clk_100mhz rising
+
+  Data Path: rst to main1/S0/obj_on
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.919   0.561  rst_IBUF (rst_IBUF)
+     LUT2:I1->O           21   0.313   0.716  _or00001 (_or0000)
+     FDR:R                     0.583          main1/S0/obj_on
+    ----------------------------------------
+    Total                      3.092ns (1.815ns logic, 1.277ns route)
+                                       (58.7% logic, 41.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
+  Total number of paths / destination ports: 127 / 11
+-------------------------------------------------------------------------
+Offset:              7.106ns (Levels of Logic = 5)
+  Source:            vgal1/x_cnt_7 (FF)
+  Destination:       pixel_g<7> (PAD)
+  Source Clock:      clk_100mhz rising 0.3X
+
+  Data Path: vgal1/x_cnt_7 to pixel_g<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.374   0.703  vgal1/x_cnt_7 (vgal1/x_cnt_7)
+     LUT4:I1->O            1   0.313   0.440  main1/pixel_b<6>160_SW1 (N33)
+     LUT4:I3->O            1   0.313   0.418  main1/pixel_b<6>160 (main1/pixel_b<6>160)
+     LUT4:I2->O            8   0.313   0.678  main1/pixel_b<6>172 (main1/N01)
+     LUT2:I1->O            1   0.313   0.390  main1/pixel_r<7>1 (pixel_r_7_OBUF)
+     OBUF:I->O                 2.851          pixel_r_7_OBUF (pixel_r<7>)
+    ----------------------------------------
+    Total                      7.106ns (4.477ns logic, 2.629ns route)
+                                       (63.0% logic, 37.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               6.756ns (Levels of Logic = 5)
+  Source:            rst (PAD)
+  Destination:       pixel_g<7> (PAD)
+
+  Data Path: rst to pixel_g<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.919   0.561  rst_IBUF (rst_IBUF)
+     LUT4:I1->O            1   0.313   0.418  main1/pixel_b<6>160 (main1/pixel_b<6>160)
+     LUT4:I2->O            8   0.313   0.678  main1/pixel_b<6>172 (main1/N01)
+     LUT2:I1->O            1   0.313   0.390  main1/pixel_r<7>1 (pixel_r_7_OBUF)
+     OBUF:I->O                 2.851          pixel_r_7_OBUF (pixel_r<7>)
+    ----------------------------------------
+    Total                      6.756ns (4.709ns logic, 2.047ns route)
+                                       (69.7% logic, 30.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.28 secs
+ 
+--> 
+
+Total memory usage is 202016 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   69 (   0 filtered)
+Number of infos    :   27 (   0 filtered)
+
