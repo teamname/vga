@@ -4,13 +4,13 @@ Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to D:/toplevel/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: duck_hunt.prj
 
@@ -145,7 +145,7 @@ Compiling verilog file "sprite_mem.v" in library work
 Module <tile_rom> compiled
 Compiling verilog file "name_ram.v" in library work
 Module <sprite_mem> compiled
-Compiling verilog file "mem.v" in library work
+Compiling verilog file "./mem.v" in library work
 Module <name_ram> compiled
 Compiling verilog file "hazard_detection.v" in library work
 Module <mem> compiled
@@ -183,16 +183,16 @@ Compiling verilog file "background.v" in library work
 Module <maindec> compiled
 Compiling verilog file "vga_logic.v" in library work
 Module <background> compiled
-Compiling verilog file "mips.v" in library work
+Compiling verilog file "vga_clk.v" in library work
 Module <vga_logic> compiled
+Compiling verilog file "mips.v" in library work
+Module <vga_clk> compiled
 Compiling verilog file "memoryfinal.v" in library work
 Module <mips> compiled
 Compiling verilog file "main_logic.v" in library work
 Module <memoryfinal> compiled
-Compiling verilog file "vga_clk.v" in library work
-Module <main_logic> compiled
 Compiling verilog file "vgamult.v" in library work
-Module <vga_clk> compiled
+Module <main_logic> compiled
 Compiling verilog file "toplevelfinal.v" in library work
 Module <vgamult> compiled
 Compiling verilog file "duck_hunt.v" in library work
@@ -207,8 +207,6 @@ Analysis of file <"duck_hunt.prj"> succeeded.
 =========================================================================
 Analyzing hierarchy for module <duck_hunt> in library <work>.
 
-Analyzing hierarchy for module <vga_clk> in library <work>.
-
 Analyzing hierarchy for module <vgamult> in library <work>.
 
 Analyzing hierarchy for module <toplevelfinal> in library <work> with parameters.
@@ -216,6 +214,8 @@ Analyzing hierarchy for module <toplevelfinal> in library <work> with parameters
 	D_W = "00000000000000000000000000001000"
 	I_MEM = "spritetest.txt"
 	I_W = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <vga_clk> in library <work>.
 
 Analyzing hierarchy for module <vga_logic> in library <work>.
 
@@ -630,6 +630,9 @@ Analyzing hierarchy for module <mux_3> in library <work> with parameters.
 Analyzing top module <duck_hunt>.
 Module <duck_hunt> is correct for synthesis.
  
+Analyzing module <vgamult> in library <work>.
+Module <vgamult> is correct for synthesis.
+ 
 Analyzing module <vga_clk> in library <work>.
 Module <vga_clk> is correct for synthesis.
  
@@ -652,9 +655,6 @@ Module <vga_clk> is correct for synthesis.
     Set user-defined property "PHASE_SHIFT =  0" for instance <DCM_INST> in unit <vga_clk>.
     Set user-defined property "SIM_MODE =  SAFE" for instance <DCM_INST> in unit <vga_clk>.
     Set user-defined property "STARTUP_WAIT =  FALSE" for instance <DCM_INST> in unit <vga_clk>.
-Analyzing module <vgamult> in library <work>.
-Module <vgamult> is correct for synthesis.
- 
 Analyzing module <vga_logic> in library <work>.
 Module <vga_logic> is correct for synthesis.
  
@@ -1231,6 +1231,7 @@ Analyzing module <memoryfinal.2> in library <work>.
 	RAM_ADDR_BITS = 32'sb00000000000000000000000000001010
 	RAM_FILE = "spritetest.txt"
 INFO:Xst:2546 - "memoryfinal.v" line 11: reading initialization file "spritetest.txt".
+WARNING:Xst:2319 - "memoryfinal.v" line 11: Signal ram in initial block is partially initialized. The initialization will be ignored.
 Module <memoryfinal.2> is correct for synthesis.
  
 
@@ -1242,8 +1243,8 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <vga_logic>.
     Related source file is "vga_logic.v".
-    Found 10-bit register for signal <pixel_x>.
-    Found 10-bit register for signal <pixel_y>.
+    Found 9-bit register for signal <pixel_x>.
+    Found 8-bit register for signal <pixel_y>.
     Found 10-bit comparator greater for signal <blank$cmp_gt0000> created at line 59.
     Found 10-bit comparator greater for signal <blank$cmp_gt0001> created at line 59.
     Found 10-bit comparator greater for signal <hsync$cmp_gt0000> created at line 57.
@@ -1255,7 +1256,7 @@ Synthesizing Unit <vga_logic>.
     Found 10-bit register for signal <x_cnt>.
     Found 10-bit register for signal <y_cnt>.
     Summary:
-	inferred  40 D-type flip-flop(s).
+	inferred  37 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred   6 Comparator(s).
 Unit <vga_logic> synthesized.
@@ -3061,7 +3062,7 @@ Unit <dec> synthesized.
 
 
 Synthesizing Unit <mem>.
-    Related source file is "mem.v".
+    Related source file is "./mem.v".
 WARNING:Xst:647 - Input <alu_out_M<31:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 Unit <mem> synthesized.
 
@@ -3105,6 +3106,7 @@ Unit <exe> synthesized.
 
 Synthesizing Unit <vgamult>.
     Related source file is "vgamult.v".
+WARNING:Xst:646 - Signal <clkin_ibufg_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <vgamult> synthesized.
 
 
@@ -3145,7 +3147,6 @@ Unit <toplevelfinal> synthesized.
 Synthesizing Unit <duck_hunt>.
     Related source file is "duck_hunt.v".
 WARNING:Xst:646 - Signal <font_clr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <clkin_ibufg_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <audioVol> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <audioSel> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <audioEn> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -3184,9 +3185,9 @@ Macro Statistics
  9-bit adder                                           : 32
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 407
- 1-bit register                                        : 136
- 10-bit register                                       : 37
+# Registers                                            : 411
+ 1-bit register                                        : 140
+ 10-bit register                                       : 35
  11-bit register                                       : 1
  16-bit register                                       : 1
  2-bit register                                        : 2
@@ -3195,8 +3196,8 @@ Macro Statistics
  4-bit register                                        : 4
  5-bit register                                        : 7
  6-bit register                                        : 1
- 8-bit register                                        : 168
- 9-bit register                                        : 33
+ 8-bit register                                        : 169
+ 9-bit register                                        : 34
 # Comparators                                          : 157
  10-bit comparator greater                             : 4
  10-bit comparator less                                : 2
@@ -3228,10 +3229,6 @@ Macro Statistics
 =========================================================================
 
 Loading device for application Rf_Device from file '2vp30.nph' in environment C:\Xilinx\10.1\ISE.
-WARNING:Xst:2404 -  FFs/Latches <pixel_x<9:9>> (without init value) have a constant value of 0 in block <vga_logic>.
-WARNING:Xst:2404 -  FFs/Latches <pixel_y<9:9>> (without init value) have a constant value of 0 in block <vga_logic>.
-WARNING:Xst:524 - All outputs of the instance <proc/proc/dp/r4W> of the block <flip_flop_enable_2> are unconnected in block <duck_hunt>.
-   This instance will be removed from the design along with all underlying logic
 
 Synthesizing (advanced) Unit <RF>.
 INFO:Xst - HDL ADVISOR - The RAM <Mram_regFile> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -3276,7 +3273,7 @@ INFO:Xst - The RAM <vga/main1/fonts/ram/Mram_MY_ROM> will be implemented as a BL
     | Port A                                                              |
     |     aspect ratio   | 2048-word x 4-bit                   |          |
     |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk_100mhz_buf> | rise     |
+    |     clkA           | connected to signal <vga/clk_100mhz_buf> | rise     |
     |     weA            | connected to signal <font_en>       | high     |
     |     addrA          | connected to signal <font_addr>     |          |
     |     diA            | connected to signal <font_data>     |          |
@@ -3286,9 +3283,65 @@ INFO:Xst - The RAM <vga/main1/fonts/ram/Mram_MY_ROM> will be implemented as a BL
     | Port B                                                              |
     |     aspect ratio   | 2048-word x 4-bit                   |          |
     |     mode           | read-first                          |          |
-    |     clkB           | connected to signal <clk_100mhz_buf> | rise     |
+    |     clkB           | connected to signal <vga/clk_100mhz_buf> | rise     |
     |     addrB          | connected to signal <vga/pixel_x>   |          |
     |     doB            | connected to signal <vga/main1/fonts/font> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - HDL ADVISOR - Asynchronous or synchronous initialization of the register <proc/proc/dp/r2M/q> prevents it from being combined with the RAM <proc/data/Mram_ram> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     clkA           | connected to signal <clk_25mhz>     | rise     |
+    |     weA            | connected to signal <proc/wr_en>    | high     |
+    |     addrA          | connected to signal <proc/mem_addr> |          |
+    |     diA            | connected to signal <proc/wr_data>  |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <proc/data/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <proc/data/mem_out>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk_25mhz>     | rise     |
+    |     weA            | connected to signal <proc/wr_en>    | high     |
+    |     addrA          | connected to signal <proc/mem_addr> |          |
+    |     diA            | connected to signal <proc/wr_data>  |          |
+    |     doA            | connected to signal <proc/mem_data> |          |
+    |     dorstA         | connected to signal <proc/wr_en>    | high     |
+    | reset value        | 00000000000000000000000000000000               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - HDL ADVISOR - Asynchronous or synchronous initialization of the register <proc/proc/dp/fetch/PC/q> prevents it from being combined with the RAM <proc/instr/Mram_ram> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 32-bit                  |          |
+    |     clkA           | connected to signal <clk_25mhz>     | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <proc/instr_addr> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <proc/instr/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <proc/instr/mem_out>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 32-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk_25mhz>     | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <proc/instr_addr> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <proc/instr_data> |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
@@ -3313,43 +3366,8 @@ INFO:Xst - The RAM <Mrom__varindex0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
 Unit <font_rom> synthesized (advanced).
 
-Synthesizing (advanced) Unit <memoryfinal_1>.
-INFO:Xst - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <mem_out>
-    -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 256-word x 32-bit                   |          |
-    |     mode           | read-first                          |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <wr_en>         | high     |
-    |     addrA          | connected to signal <addr>          |          |
-    |     diA            | connected to signal <data_in>       |          |
-    |     doA            | connected to signal <mem_out>       |          |
-    |     dorstA         | connected to signal <wr_en>         | high     |
-    | reset value        | 00000000000000000000000000000000               |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
-Unit <memoryfinal_1> synthesized (advanced).
-
 Synthesizing (advanced) Unit <memoryfinal_2>.
 INFO:Xst - The RAM <Mram_ram> appears to be read-only. If that was not your intent please check the write enable description.
-INFO:Xst - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <mem_out>
-    -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 1024-word x 32-bit                  |          |
-    |     mode           | read-first                          |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <addr>          |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to signal <mem_out>       |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
 Unit <memoryfinal_2> synthesized (advanced).
 
 Synthesizing (advanced) Unit <name_ram_1>.
@@ -3530,16 +3548,15 @@ INFO:Xst:2261 - The FF/Latch <y_cnt_5> in Unit <vga_logic> is equivalent to the 
 INFO:Xst:2261 - The FF/Latch <y_cnt_6> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_5> 
 INFO:Xst:2261 - The FF/Latch <y_cnt_7> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_6> 
 INFO:Xst:2261 - The FF/Latch <y_cnt_8> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_7> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_1> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_0> 
-INFO:Xst:2261 - The FF/Latch <y_cnt_9> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_y_8> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_2> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_1> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_3> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_2> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_4> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_3> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_5> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_4> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_6> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_5> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_7> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_6> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_8> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_7> 
-INFO:Xst:2261 - The FF/Latch <x_cnt_9> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <pixel_x_8> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_0> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_1> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_1> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_2> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_2> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_3> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_3> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_4> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_4> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_5> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_5> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_6> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_6> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_7> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_7> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_8> 
+INFO:Xst:2261 - The FF/Latch <pixel_x_8> in Unit <vga_logic> is equivalent to the following FF/Latch, which will be removed : <x_cnt_9> 
 WARNING:Xst:1710 - FF/Latch <rdata_0> (without init value) has a constant value of 1 in block <sprite_mem_1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdata_1> (without init value) has a constant value of 1 in block <sprite_mem_1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdata_2> (without init value) has a constant value of 1 in block <sprite_mem_1>. This FF/Latch will be trimmed during the optimization process.
@@ -3764,10 +3781,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdata_4> (without i
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdata_5> (without init value) has a constant value of 1 in block <sprite_mem_32>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdata_6> (without init value) has a constant value of 1 in block <sprite_mem_32>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdata_7> (without init value) has a constant value of 1 in block <sprite_mem_32>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1426 - The value init of the FF/Latch rd_ack hinder the constant cleaning in the block memoryfinal_1.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch rd_ack hinder the constant cleaning in the block memoryfinal_2.
-   You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <active> (without init value) has a constant value of 0 in block <background_4>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_1> is equivalent to the following 15 FFs/Latches, which will be removed : <pixel_b_1> <pixel_b_2> <pixel_b_3> <pixel_b_4> <pixel_b_5> <pixel_r_0> <pixel_r_1> <pixel_r_2> <pixel_r_3> <pixel_r_4> <pixel_g_0> <pixel_g_1> <pixel_g_2> <pixel_g_3> <pixel_g_4> 
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_2> is equivalent to the following 15 FFs/Latches, which will be removed : <pixel_b_1> <pixel_b_2> <pixel_b_3> <pixel_b_4> <pixel_b_5> <pixel_r_0> <pixel_r_1> <pixel_r_2> <pixel_r_3> <pixel_r_4> <pixel_g_0> <pixel_g_1> <pixel_g_2> <pixel_g_3> <pixel_g_4> 
@@ -3801,90 +3814,95 @@ INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_29> is equivalent to th
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_30> is equivalent to the following 15 FFs/Latches, which will be removed : <pixel_b_1> <pixel_b_2> <pixel_b_3> <pixel_b_4> <pixel_b_5> <pixel_r_0> <pixel_r_1> <pixel_r_2> <pixel_r_3> <pixel_r_4> <pixel_g_0> <pixel_g_1> <pixel_g_2> <pixel_g_3> <pixel_g_4> 
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_31> is equivalent to the following 15 FFs/Latches, which will be removed : <pixel_b_1> <pixel_b_2> <pixel_b_3> <pixel_b_4> <pixel_b_5> <pixel_r_0> <pixel_r_1> <pixel_r_2> <pixel_r_3> <pixel_r_4> <pixel_g_0> <pixel_g_1> <pixel_g_2> <pixel_g_3> <pixel_g_4> 
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_32> is equivalent to the following 15 FFs/Latches, which will be removed : <pixel_b_1> <pixel_b_2> <pixel_b_3> <pixel_b_4> <pixel_b_5> <pixel_r_0> <pixel_r_1> <pixel_r_2> <pixel_r_3> <pixel_r_4> <pixel_g_0> <pixel_g_1> <pixel_g_2> <pixel_g_3> <pixel_g_4> 
-WARNING:Xst:1710 - FF/Latch <q_10> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_9> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_8> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_7> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_6> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_5> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_4> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_3> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_2> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_1> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_0> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S31>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S31>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S30>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S30>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S29>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S29>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S28>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S28>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S27>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S27>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_31> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_30> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_29> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_28> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_27> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_26> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_25> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_24> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_23> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_22> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_21> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_20> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_19> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_18> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_17> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_16> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_15> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_14> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_13> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_12> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <q_11> (without init value) has a constant value of 0 in block <EPC>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S16>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S15>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S15>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S14>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S14>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S13>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S13>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S11>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S11>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S9>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S9>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S7>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S7>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S26>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S25>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S24>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S24>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S23>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S23>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S22>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S22>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S21>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S21>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S20>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S20>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1426 - The value init of the FF/Latch proc/instr/rd_ack hinder the constant cleaning in the block duck_hunt.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch proc/data/rd_ack hinder the constant cleaning in the block duck_hunt.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_31> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_30> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_29> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_28> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_27> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_26> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_25> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_24> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_23> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_22> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_21> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_20> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_19> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_18> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_17> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_16> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_15> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_14> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_13> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_12> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_11> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_10> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_9> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_8> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_7> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_6> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_5> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_4> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_3> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_2> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_1> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc/proc/dp/fetch/EPC/q_0> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <proc/instr/rd_ack> in Unit <duck_hunt> is equivalent to the following FF/Latch, which will be removed : <proc/data/rd_ack> 
 WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S19>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S18>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S18>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S17>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S24>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S24>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S27>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S27>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S28>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S28>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S30>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S30>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S31>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S31>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S12>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S12>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S16>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_6> (without init value) has a constant value of 0 in block <vga/main1/S18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_b_7> (without init value) has a constant value of 0 in block <vga/main1/S18>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <v_flip> of sequential type is unconnected in block <vga/main1/S0>.
 WARNING:Xst:2677 - Node <h_flip> of sequential type is unconnected in block <vga/main1/S0>.
 WARNING:Xst:2677 - Node <addr_0> of sequential type is unconnected in block <vga/main1/S0>.
@@ -4250,8 +4268,6 @@ WARNING:Xst:1290 - Hierarchical block <volume> is unconnected in block <proc/pro
    It will be removed from the design.
 WARNING:Xst:1290 - Hierarchical block <soundsel> is unconnected in block <proc/proc/dp/dec>.
    It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <EPC> is unconnected in block <proc/proc/dp/fetch>.
-   It will be removed from the design.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -4279,8 +4295,8 @@ Macro Statistics
  9-bit adder                                           : 32
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 1858
- Flip-Flops                                            : 1858
+# Registers                                            : 1829
+ Flip-Flops                                            : 1829
 # Comparators                                          : 157
  10-bit comparator greater                             : 4
  10-bit comparator less                                : 2
@@ -4310,7 +4326,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <proc/data/rd_ack> in Unit <duck_hunt> is equivalent to the following FF/Latch, which will be removed : <proc/instr/rd_ack> 
+INFO:Xst:2261 - The FF/Latch <proc/proc/dp/r3E/q_16> in Unit <duck_hunt> is equivalent to the following 15 FFs/Latches, which will be removed : <proc/proc/dp/r3E/q_17> <proc/proc/dp/r3E/q_18> <proc/proc/dp/r3E/q_19> <proc/proc/dp/r3E/q_20> <proc/proc/dp/r3E/q_21> <proc/proc/dp/r3E/q_22> <proc/proc/dp/r3E/q_23> <proc/proc/dp/r3E/q_24> <proc/proc/dp/r3E/q_25> <proc/proc/dp/r3E/q_26> <proc/proc/dp/r3E/q_27> <proc/proc/dp/r3E/q_28> <proc/proc/dp/r3E/q_29> <proc/proc/dp/r3E/q_30> <proc/proc/dp/r3E/q_31> 
 INFO:Xst:2261 - The FF/Latch <q_31> in Unit <flip_flop_enable_clear_1> is equivalent to the following 4 FFs/Latches, which will be removed : <q_32> <q_33> <q_34> <q_35> 
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_1> is equivalent to the following 8 FFs/Latches, which will be removed : <pixel_b_6> <pixel_b_7> <pixel_r_5> <pixel_r_6> <pixel_r_7> <pixel_g_5> <pixel_g_6> <pixel_g_7> 
 INFO:Xst:2261 - The FF/Latch <pixel_b_0> in Unit <sprite_2> is equivalent to the following 8 FFs/Latches, which will be removed : <pixel_b_6> <pixel_b_7> <pixel_r_5> <pixel_r_6> <pixel_r_7> <pixel_g_5> <pixel_g_6> <pixel_g_7> 
@@ -4749,10 +4765,6 @@ Optimizing unit <maindec> ...
 
 Optimizing unit <flip_flop_enable_clear_1> ...
 
-Optimizing unit <flip_flop_enable_2> ...
-
-Optimizing unit <flip_flop_enable_clear_3> ...
-
 Optimizing unit <counter> ...
 
 Optimizing unit <lfsr_counter> ...
@@ -4827,41 +4839,7 @@ Optimizing unit <sprite_32> ...
 
 Optimizing unit <cnt_dp> ...
 
-Optimizing unit <fetch> ...
-
 Optimizing unit <controller> ...
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_31> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_30> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_29> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_28> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_27> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_26> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_25> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_24> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_23> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_22> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_21> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_20> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_19> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_18> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_17> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_16> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_15> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_14> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_13> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_12> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_11> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_10> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_9> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_8> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_7> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_6> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_5> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_4> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_3> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_2> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_1> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <proc/proc/dp/fetch/EPC/q_0> (without init value) has a constant value of 0 in block <duck_hunt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <proc/proc/dp/counter/tmp_3> of sequential type is unconnected in block <duck_hunt>.
 WARNING:Xst:2677 - Node <proc/proc/dp/counter/tmp_2> of sequential type is unconnected in block <duck_hunt>.
 WARNING:Xst:2677 - Node <proc/proc/dp/counter/tmp_1> of sequential type is unconnected in block <duck_hunt>.
@@ -4918,34 +4896,33 @@ INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00001>, <vga/main1/B1/til
 INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00003>, <vga/main1/B1/tiles/Mrom__varindex00005> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00004>, <vga/main1/B1/tiles/Mrom__varindex00008> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B2/tiles/Mrom__varindex00001>, <vga/main1/B2/tiles/Mrom__varindex00002> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga/main1/B2/tiles/Mrom__varindex00005>, <vga/main1/B2/tiles/Mrom__varindex00003> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B2/tiles/Mrom__varindex00004>, <vga/main1/B2/tiles/Mrom__varindex00008> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga/main1/B3/tiles/Mrom__varindex00001>, <vga/main1/B3/tiles/Mrom__varindex00002> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga/main1/B2/tiles/Mrom__varindex00003>, <vga/main1/B2/tiles/Mrom__varindex00005> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga/main1/B3/tiles/Mrom__varindex00002>, <vga/main1/B3/tiles/Mrom__varindex00001> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga/main1/B3/tiles/Mrom__varindex00005>, <vga/main1/B3/tiles/Mrom__varindex00003> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B3/tiles/Mrom__varindex00004>, <vga/main1/B3/tiles/Mrom__varindex00008> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga/main1/B3/tiles/Mrom__varindex00003>, <vga/main1/B3/tiles/Mrom__varindex00005> are equivalent, second RAM is removed
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <proc/proc/dp/r3E/q_31> in Unit <duck_hunt> is equivalent to the following 15 FFs/Latches, which will be removed : <proc/proc/dp/r3E/q_30> <proc/proc/dp/r3E/q_29> <proc/proc/dp/r3E/q_28> <proc/proc/dp/r3E/q_27> <proc/proc/dp/r3E/q_26> <proc/proc/dp/r3E/q_25> <proc/proc/dp/r3E/q_24> <proc/proc/dp/r3E/q_23> <proc/proc/dp/r3E/q_22> <proc/proc/dp/r3E/q_21> <proc/proc/dp/r3E/q_20> <proc/proc/dp/r3E/q_19> <proc/proc/dp/r3E/q_18> <proc/proc/dp/r3E/q_17> <proc/proc/dp/r3E/q_16> 
 INFO:Xst:2399 - RAMs <vga/main1/B0/tiles/Mrom__varindex00001>, <vga/main1/B2/tiles/Mrom__varindex00001> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B0/tiles/Mrom__varindex00004>, <vga/main1/B2/tiles/Mrom__varindex00004> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga/main1/B0/tiles/Mrom__varindex00003>, <vga/main1/B2/tiles/Mrom__varindex00005> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga/main1/B0/tiles/Mrom__varindex00003>, <vga/main1/B2/tiles/Mrom__varindex00003> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B0/tiles/Mrom__varindex00007>, <vga/main1/B2/tiles/Mrom__varindex00007> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B0/tiles/Mrom__varindex00006>, <vga/main1/B2/tiles/Mrom__varindex00006> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00001>, <vga/main1/B3/tiles/Mrom__varindex00001> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00003>, <vga/main1/B3/tiles/Mrom__varindex00003> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00001>, <vga/main1/B3/tiles/Mrom__varindex00002> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00003>, <vga/main1/B3/tiles/Mrom__varindex00005> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00006>, <vga/main1/B3/tiles/Mrom__varindex00006> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00004>, <vga/main1/B3/tiles/Mrom__varindex00004> are equivalent, second RAM is removed
 INFO:Xst:2399 - RAMs <vga/main1/B1/tiles/Mrom__varindex00007>, <vga/main1/B3/tiles/Mrom__varindex00007> are equivalent, second RAM is removed
 Found area constraint ratio of 100 (+ 5) on block duck_hunt, actual ratio is 16.
-FlipFlop vga/vgal1/x_cnt_1 has been replicated 2 time(s)
+FlipFlop vga/vgal1/pixel_x_0 has been replicated 2 time(s)
 FlipFlop vga/vgal1/y_cnt_1 has been replicated 9 time(s)
 FlipFlop vga/vgal1/y_cnt_2 has been replicated 9 time(s)
 FlipFlop vga/vgal1/y_cnt_3 has been replicated 9 time(s)
 FlipFlop vga/vgal1/y_cnt_4 has been replicated 9 time(s)
-FlipFlop vga/vgal1/y_cnt_5 has been replicated 9 time(s)
-FlipFlop vga/vgal1/y_cnt_6 has been replicated 9 time(s)
-FlipFlop vga/vgal1/y_cnt_7 has been replicated 6 time(s)
+FlipFlop vga/vgal1/y_cnt_5 has been replicated 6 time(s)
+FlipFlop vga/vgal1/y_cnt_6 has been replicated 4 time(s)
+FlipFlop vga/vgal1/y_cnt_7 has been replicated 4 time(s)
 FlipFlop vga/vgal1/y_cnt_8 has been replicated 4 time(s)
 
 Final Macro Processing ...
@@ -4954,8 +4931,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1258
- Flip-Flops                                            : 1258
+# Registers                                            : 1252
+ Flip-Flops                                            : 1252
 
 =========================================================================
 
@@ -4984,28 +4961,27 @@ Design Statistics
 # IOs                              : 31
 
 Cell Usage :
-# BELS                             : 4982
+# BELS                             : 4956
 #      GND                         : 1
 #      INV                         : 65
 #      LUT1                        : 59
-#      LUT2                        : 1128
-#      LUT2_D                      : 3
-#      LUT2_L                      : 37
-#      LUT3                        : 577
-#      LUT3_D                      : 51
-#      LUT3_L                      : 57
-#      LUT4                        : 1109
-#      LUT4_D                      : 13
-#      LUT4_L                      : 16
+#      LUT2                        : 1137
+#      LUT2_L                      : 36
+#      LUT3                        : 562
+#      LUT3_D                      : 49
+#      LUT3_L                      : 50
+#      LUT4                        : 1104
+#      LUT4_D                      : 12
+#      LUT4_L                      : 45
 #      MUXCY                       : 1368
-#      MUXF5                       : 259
+#      MUXF5                       : 229
 #      MUXF6                       : 1
 #      VCC                         : 1
 #      XORCY                       : 237
-# FlipFlops/Latches                : 1258
+# FlipFlops/Latches                : 1252
 #      FD                          : 1
-#      FDC                         : 102
-#      FDR                         : 136
+#      FDC                         : 92
+#      FDR                         : 140
 #      FDRE                        : 1019
 # RAMS                             : 84
 #      RAM32X1D                    : 64
@@ -5031,10 +5007,10 @@ Device utilization summary:
 
 Selected Device : 2vp30ff896-6 
 
- Number of Slices:                     1952  out of  13696    14%  
- Number of Slice Flip Flops:           1258  out of  27392     4%  
- Number of 4 input LUTs:               3371  out of  27392    12%  
-    Number used as logic:              3115
+ Number of Slices:                     1929  out of  13696    14%  
+ Number of Slice Flip Flops:           1252  out of  27392     4%  
+ Number of 4 input LUTs:               3375  out of  27392    12%  
+    Number used as logic:              3119
     Number used as RAMs:                256
  Number of IOs:                          31
  Number of bonded IOBs:                  31  out of    556     5%  
@@ -5060,30 +5036,30 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+----------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)      | Load  |
------------------------------------+----------------------------+-------+
-clk_100mhz                         | vga_clk_gen1/DCM_INST:CLK0 | 726   |
-clk_100mhz                         | vga_clk_gen1/DCM_INST:CLKFX| 598   |
------------------------------------+----------------------------+-------+
+-----------------------------------+--------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)          | Load  |
+-----------------------------------+--------------------------------+-------+
+clk_100mhz                         | vga/vga_clk_gen1/DCM_INST:CLKFX| 592   |
+clk_100mhz                         | vga/vga_clk_gen1/DCM_INST:CLK0 | 726   |
+-----------------------------------+--------------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------+--------------------------------------+-------+
-Control Signal                     | Buffer(FF name)                      | Load  |
------------------------------------+--------------------------------------+-------+
-_or00001_1(_or00001_1:O)           | NONE(vga/vgal1/y_cnt_5_6)            | 86    |
-_or0000(_or00001:O)                | NONE(proc/proc/dp/dec/randcnt/lfsr_0)| 16    |
------------------------------------+--------------------------------------+-------+
+-----------------------------------+--------------------------+-------+
+Control Signal                     | Buffer(FF name)          | Load  |
+-----------------------------------+--------------------------+-------+
+vga/_or00001_1(vga/_or00001_1:O)   | NONE(vga/vgal1/pixel_x_1)| 76    |
+rst                                | IBUF                     | 16    |
+-----------------------------------+--------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -6
 
    Minimum period: 5.049ns (Maximum Frequency: 198.059MHz)
-   Minimum input arrival time before clock: 6.262ns
-   Maximum output required time after clock: 15.878ns
-   Maximum combinational path delay: 17.831ns
+   Minimum input arrival time before clock: 6.577ns
+   Maximum output required time after clock: 16.452ns
+   Maximum combinational path delay: 19.148ns
 
 Timing Detail:
 --------------
@@ -5092,7 +5068,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_100mhz'
   Clock period: 5.049ns (frequency: 198.059MHz)
-  Total number of paths / destination ports: 1070831 / 3281
+  Total number of paths / destination ports: 1299083 / 3275
 -------------------------------------------------------------------------
 Delay:               5.049ns (Levels of Logic = 4)
   Source:            vga/main1/S2/current_x_8 (FF)
@@ -5116,106 +5092,106 @@ Delay:               5.049ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 1319 / 1188
+  Total number of paths / destination ports: 1354 / 1192
 -------------------------------------------------------------------------
-Offset:              6.262ns (Levels of Logic = 5)
+Offset:              6.577ns (Levels of Logic = 5)
   Source:            rst (PAD)
-  Destination:       proc/proc/dp/r2D/q_31 (FF)
-  Destination Clock: clk_100mhz rising 0.3X
+  Destination:       vga/main1/S2/obj_on (FF)
+  Destination Clock: clk_100mhz rising
 
-  Data Path: rst to proc/proc/dp/r2D/q_31
+  Data Path: rst to vga/main1/S2/obj_on
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   0.919   0.678  rst_IBUF (rst_IBUF)
-     LUT2:I1->O          338   0.313   1.351  _or00001 (_or0000)
-     LUT4:I3->O            2   0.313   0.561  proc/proc/cont/bc/pc_sel_and0000107 (proc/proc/cont/bc/pc_sel_and0000107)
-     LUT4_L:I1->LO         1   0.313   0.128  proc/proc/cont/bc/pc_sel_and0000109_1 (proc/proc/cont/bc/pc_sel_and0000109)
-     LUT4:I2->O           32   0.313   0.790  proc/proc/dp/r2D/q_or00001 (proc/proc/dp/r2D/q_or0000)
-     FDRE:R                    0.583          proc/proc/dp/r2D/q_0
+     IBUF:I->O           313   0.919   1.375  rst_IBUF (proc/proc/cont/regM/q_or0000)
+     LUT2:I1->O          365   0.313   1.396  vga/_or00001 (vga/_or0000)
+     LUT4:I3->O            1   0.313   0.533  vga/main1/S2/obj_on_or000041 (vga/main1/S2/obj_on_or000041)
+     LUT2_L:I0->LO         1   0.313   0.128  vga/main1/S2/obj_on_or000088_SW0 (N731)
+     LUT4:I2->O            1   0.313   0.390  vga/main1/S2/obj_on_or0000101 (vga/main1/S2/obj_on_or0000)
+     FDR:R                     0.583          vga/main1/S2/obj_on
     ----------------------------------------
-    Total                      6.262ns (2.754ns logic, 3.508ns route)
-                                       (44.0% logic, 56.0% route)
+    Total                      6.577ns (2.754ns logic, 3.823ns route)
+                                       (41.9% logic, 58.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_100mhz'
-  Total number of paths / destination ports: 3870 / 27
+  Total number of paths / destination ports: 4269 / 27
 -------------------------------------------------------------------------
-Offset:              15.878ns (Levels of Logic = 16)
-  Source:            vga/vgal1/x_cnt_9 (FF)
-  Destination:       pixel_g<7> (PAD)
+Offset:              16.452ns (Levels of Logic = 16)
+  Source:            vga/vgal1/pixel_x_8 (FF)
+  Destination:       pixel_r<5> (PAD)
   Source Clock:      clk_100mhz rising 0.3X
 
-  Data Path: vga/vgal1/x_cnt_9 to pixel_g<7>
+  Data Path: vga/vgal1/pixel_x_8 to pixel_r<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             72   0.374   1.000  vga/vgal1/x_cnt_9 (vga/vgal1/x_cnt_9)
-     LUT4:I0->O            1   0.313   0.533  vga/main1/pixel_g<5>1121157 (vga/main1/pixel_g<5>1121157)
-     LUT4:I0->O            2   0.313   0.588  vga/main1/pixel_g<5>1121161 (N333)
-     LUT4:I0->O            8   0.313   0.612  vga/main1/pixel_b_font<4>1 (vga/main1/obj_onf)
-     LUT4:I3->O            6   0.313   0.667  vga/main1/pixel_g<5>11212 (N225)
-     LUT4:I0->O            1   0.313   0.440  vga/main1/pixel_g<7>163_SW0 (N764)
-     LUT4:I3->O            1   0.313   0.440  vga/main1/pixel_g<7>163 (vga/main1/pixel_g<7>163)
-     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_g<7>185 (vga/main1/pixel_g<7>185)
-     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_g<7>218 (vga/main1/pixel_g<7>218)
-     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_g<7>251 (vga/main1/pixel_g<7>251)
-     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_g<7>284 (vga/main1/pixel_g<7>284)
-     LUT4:I3->O            1   0.313   0.533  vga/main1/pixel_g<7>317 (vga/main1/pixel_g<7>317)
-     LUT4:I0->O            1   0.313   0.506  vga/main1/pixel_g<7>350_SW0 (N766)
-     LUT4:I1->O            1   0.313   0.000  vga/main1/pixel_g<7>371_SW11 (vga/main1/pixel_g<7>371_SW1)
-     MUXF5:I0->O           1   0.340   0.506  vga/main1/pixel_g<7>371_SW1_f5 (N838)
-     LUT4:I1->O            1   0.313   0.390  vga/main1/pixel_g<7>371 (pixel_g_7_OBUF)
-     OBUF:I->O                 2.851          pixel_g_7_OBUF (pixel_g<7>)
+     FDC:C->Q             72   0.374   1.000  vga/vgal1/pixel_x_8 (vga/vgal1/pixel_x_8)
+     LUT4:I0->O            1   0.313   0.533  vga/main1/pixel_b<5>1114157 (vga/main1/pixel_b<5>1114157)
+     LUT4:I0->O            4   0.313   0.629  vga/main1/pixel_b<5>1114161 (N336)
+     LUT4:I0->O           18   0.313   0.814  vga/main1/fonts/obj_on (vga/main1/obj_onf)
+     LUT3:I1->O            4   0.313   0.629  vga/main1/pixel_b<6>11131 (N288)
+     LUT4:I0->O            1   0.313   0.533  vga/main1/pixel_r<5>134 (vga/main1/pixel_r<5>134)
+     LUT4:I0->O            1   0.313   0.506  vga/main1/pixel_r<5>146_SW0 (N817)
+     LUT4:I1->O            1   0.313   0.418  vga/main1/pixel_r<5>146 (vga/main1/pixel_r<5>146)
+     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_r<5>178 (vga/main1/pixel_r<5>178)
+     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_r<5>211 (vga/main1/pixel_r<5>211)
+     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_r<5>244 (vga/main1/pixel_r<5>244)
+     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_r<5>277 (vga/main1/pixel_r<5>277)
+     LUT4:I2->O            1   0.313   0.506  vga/main1/pixel_r<5>310 (vga/main1/pixel_r<5>310)
+     LUT3:I1->O            1   0.313   0.440  vga/main1/pixel_r<5>343_SW0 (N819)
+     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_r<5>343 (vga/main1/pixel_r<5>343)
+     LUT4:I2->O            1   0.313   0.390  vga/main1/pixel_r<5>376 (pixel_r_5_OBUF)
+     OBUF:I->O                 2.851          pixel_r_5_OBUF (pixel_r<5>)
     ----------------------------------------
-    Total                     15.878ns (7.947ns logic, 7.931ns route)
-                                       (50.1% logic, 49.9% route)
+    Total                     16.452ns (7.920ns logic, 8.532ns route)
+                                       (48.1% logic, 51.9% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 57 / 24
+  Total number of paths / destination ports: 80 / 24
 -------------------------------------------------------------------------
-Delay:               17.831ns (Levels of Logic = 18)
+Delay:               19.148ns (Levels of Logic = 18)
   Source:            rst (PAD)
-  Destination:       pixel_g<7> (PAD)
+  Destination:       pixel_r<5> (PAD)
 
-  Data Path: rst to pixel_g<7>
+  Data Path: rst to pixel_r<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   0.919   0.678  rst_IBUF (rst_IBUF)
-     LUT2:I1->O          338   0.313   1.417  _or00001 (_or0000)
-     LUT4:I1->O            1   0.313   0.533  vga/main1/pixel_g<5>1121157 (vga/main1/pixel_g<5>1121157)
-     LUT4:I0->O            2   0.313   0.588  vga/main1/pixel_g<5>1121161 (N333)
-     LUT4:I0->O            8   0.313   0.612  vga/main1/pixel_b_font<4>1 (vga/main1/obj_onf)
-     LUT4:I3->O            6   0.313   0.667  vga/main1/pixel_g<5>11212 (N225)
-     LUT4:I0->O            1   0.313   0.440  vga/main1/pixel_g<7>163_SW0 (N764)
-     LUT4:I3->O            1   0.313   0.440  vga/main1/pixel_g<7>163 (vga/main1/pixel_g<7>163)
-     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_g<7>185 (vga/main1/pixel_g<7>185)
-     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_g<7>218 (vga/main1/pixel_g<7>218)
-     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_g<7>251 (vga/main1/pixel_g<7>251)
-     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_g<7>284 (vga/main1/pixel_g<7>284)
-     LUT4:I3->O            1   0.313   0.533  vga/main1/pixel_g<7>317 (vga/main1/pixel_g<7>317)
-     LUT4:I0->O            1   0.313   0.506  vga/main1/pixel_g<7>350_SW0 (N766)
-     LUT4:I1->O            1   0.313   0.000  vga/main1/pixel_g<7>371_SW11 (vga/main1/pixel_g<7>371_SW1)
-     MUXF5:I0->O           1   0.340   0.506  vga/main1/pixel_g<7>371_SW1_f5 (N838)
-     LUT4:I1->O            1   0.313   0.390  vga/main1/pixel_g<7>371 (pixel_g_7_OBUF)
-     OBUF:I->O                 2.851          pixel_g_7_OBUF (pixel_g<7>)
+     IBUF:I->O           313   0.919   1.375  rst_IBUF (proc/proc/cont/regM/q_or0000)
+     LUT2:I1->O          365   0.313   1.462  vga/_or00001 (vga/_or0000)
+     LUT4:I1->O            1   0.313   0.533  vga/main1/pixel_b<5>1114157 (vga/main1/pixel_b<5>1114157)
+     LUT4:I0->O            4   0.313   0.629  vga/main1/pixel_b<5>1114161 (N336)
+     LUT4:I0->O           18   0.313   0.814  vga/main1/fonts/obj_on (vga/main1/obj_onf)
+     LUT3:I1->O            4   0.313   0.629  vga/main1/pixel_b<6>11131 (N288)
+     LUT4:I0->O            1   0.313   0.533  vga/main1/pixel_r<5>134 (vga/main1/pixel_r<5>134)
+     LUT4:I0->O            1   0.313   0.506  vga/main1/pixel_r<5>146_SW0 (N817)
+     LUT4:I1->O            1   0.313   0.418  vga/main1/pixel_r<5>146 (vga/main1/pixel_r<5>146)
+     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_r<5>178 (vga/main1/pixel_r<5>178)
+     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_r<5>211 (vga/main1/pixel_r<5>211)
+     LUT4:I2->O            1   0.313   0.440  vga/main1/pixel_r<5>244 (vga/main1/pixel_r<5>244)
+     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_r<5>277 (vga/main1/pixel_r<5>277)
+     LUT4:I2->O            1   0.313   0.506  vga/main1/pixel_r<5>310 (vga/main1/pixel_r<5>310)
+     LUT3:I1->O            1   0.313   0.440  vga/main1/pixel_r<5>343_SW0 (N819)
+     LUT4:I3->O            1   0.313   0.418  vga/main1/pixel_r<5>343 (vga/main1/pixel_r<5>343)
+     LUT4:I2->O            1   0.313   0.390  vga/main1/pixel_r<5>376 (pixel_r_5_OBUF)
+     OBUF:I->O                 2.851          pixel_r_5_OBUF (pixel_r<5>)
     ----------------------------------------
-    Total                     17.831ns (8.805ns logic, 9.026ns route)
-                                       (49.4% logic, 50.6% route)
+    Total                     19.148ns (8.778ns logic, 10.370ns route)
+                                       (45.8% logic, 54.2% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 324.00 secs
-Total CPU time to Xst completion: 323.82 secs
+Total REAL time to Xst completion: 232.00 secs
+Total CPU time to Xst completion: 232.45 secs
  
 --> 
 
-Total memory usage is 493984 kilobytes
+Total memory usage is 493024 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1248 (   0 filtered)
-Number of infos    :  199 (   0 filtered)
+Number of warnings : 1209 (   0 filtered)
+Number of infos    :  200 (   0 filtered)
 

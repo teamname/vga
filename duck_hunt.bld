@@ -6,6 +6,7 @@ D:/toplevel/DemoProject.ise -intstyle ise -dd _ngo -nt timestamp -i -p
 xc2vp30-ff896-6 duck_hunt.ngc duck_hunt.ngd
 
 Reading NGO file "D:/toplevel/duck_hunt.ngc" ...
+Reading in constraint information from 'duck_hunt.ucf'...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,7 +28,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 79404 kilobytes
+Total memory usage is 81516 kilobytes
 
 Writing NGD file "duck_hunt.ngd" ...
 

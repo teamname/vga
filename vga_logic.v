@@ -25,8 +25,8 @@ module vga_logic(clk, rst, blank, comp_sync, hsync, vsync, pixel_x, pixel_y);
 	 output comp_sync;
     output hsync;
     output vsync;
-    output reg [9:0] pixel_x;
-    output reg [9:0] pixel_y;
+    output reg [8:0] pixel_x;
+    output reg [7:0] pixel_y;
 	 
 	 reg [9:0] x_cnt;
 	 reg [9:0] y_cnt;

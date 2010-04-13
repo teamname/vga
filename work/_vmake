@@ -1,72 +1,231 @@
 m255
 K3
 cModel Technology
+valu
+Z0 !s91 D:/toplevel/alu.v
+Z1 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/alu.v|
+valu_shift_md
+Z2 !s91 D:/toplevel/alu_shift_md.v
+Z3 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/alu_shift_md.v|
+vand2
+Z4 !s91 D:/toplevel/utilities.v
+Z5 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/utilities.v|
 vbackground
-Z0 !s91 D:/vga/background.v
-Z1 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/background.v|
+Z6 !s91 D:/toplevel/background.v
+Z7 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/background.v|
+vbr_control
+Z8 !s91 D:/toplevel/br_control.v
+Z9 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/br_control.v|
+vbranch_dec
+Z10 !s91 D:/toplevel/branch_dec.v
+Z11 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/branch_dec.v|
+vcmux_2
+R4
+R5
+vcnt_dp
+Z12 !s91 D:/toplevel/datapath.v
+Z13 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/datapath.v|
+vcompare_equal
+R4
+R5
+vcompare_gt_zero
+R4
+R5
+vcompare_lt_zero
+R4
+R5
+vcompare_to_zero
+R4
+R5
+vcontroller
+Z14 !s91 D:/toplevel/control.v
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/control.v|
+vcounter
+Z16 !s91 D:/toplevel/cnt.v
+Z17 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/cnt.v|
+vdatapath
+R12
+R13
+vdec
+Z18 !s91 D:/toplevel/dec.v
+Z19 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/dec.v|
+vdecoder_1
+R4
+R5
+vdecoder_2
+R4
+R5
+vduck_hunt
+Z20 !s91 D:/toplevel/duck_hunt.v
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/duck_hunt.v|
+vduck_hunt_tb
+Z22 !s91 D:/toplevel/duck_hunt_tb.v
+Z23 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/duck_hunt_tb.v|
+vexe
+Z24 !s91 D:/toplevel/exe.v
+Z25 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/exe.v|
+vextend_sign
+R4
+R5
+vfetch
+Z26 !s91 D:/toplevel/fetch.v
+Z27 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/fetch.v|
+vflip_flop
+R4
+R5
+vflip_flop_enable
+R4
+R5
+vflip_flop_enable_clear
+R4
+R5
+vflip_flop_no_reset
+R4
+R5
+vflip_flop_reset
+R4
+R5
 vfont
-Z2 !s91 D:/vga/font.v
-Z3 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font.v|
+Z28 !s91 D:/toplevel/font.v
+Z29 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/font.v|
 vfont_ram
-Z4 !s91 D:/vga/font_ram.v
-Z5 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font_ram.v|
+Z30 !s91 D:/toplevel/font_ram.v
+Z31 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/font_ram.v|
 vfont_ram2
-Z6 !s91 D:/vga/font_ram2.v
-Z7 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font_ram2.v|
+Z32 !s91 D:/toplevel/font_ram2.v
+Z33 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/font_ram2.v|
 vfont_rom
-Z8 !s91 D:/vga/font_rom.v
-Z9 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font_rom.v|
+Z34 !s91 D:/toplevel/font_rom.v
+Z35 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/font_rom.v|
+vforward
+Z36 !s91 D:/toplevel/forward.v
+Z37 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/forward.v|
 vglbl
-Z10 !s91 D:/vga/mult32.v
-Z11 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/mult32.v|
+Z38 !s91 D:/toplevel/mult32.v
+Z39 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/mult32.v|
+vhazard_detection
+Z40 !s91 D:/toplevel/hazard_detection.v
+Z41 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/hazard_detection.v|
+vincrement
+R4
+R5
+vis_zero
+R4
+R5
+vlfsr
+Z42 !s91 D:/toplevel/lfsr.v
+Z43 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/lfsr.v|
+vlfsr_counter
+Z44 !s91 D:/toplevel/lfsr_counter.v
+Z45 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/lfsr_counter.v|
 vmain_logic
-Z12 !s91 D:/vga/main_logic.v
-Z13 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/main_logic.v|
+Z46 !s91 D:/toplevel/main_logic.v
+Z47 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/main_logic.v|
+vmaindec
+R14
+R15
+vmdunit
+Z48 !s91 D:/toplevel/multdiv.v
+Z49 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/multdiv.v|
 vmem
-Z14 !s91 D:/vga/mem.v
-Z15 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/mem.v|
+Z50 !s91 D:/toplevel/mem.v
+Z51 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/mem.v|
+vmemoryfinal
+Z52 !s91 D:/toplevel/memoryfinal.v
+Z53 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/memoryfinal.v|
+vmips
+Z54 !s91 D:/toplevel/mips.v
+Z55 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/mips.v|
 vmult32
-R10
-R11
+R38
+R39
+vmux_2
+R4
+R5
+vmux_3
+R4
+R5
+vmux_4
+R4
+R5
+vmux_5
+R4
+R5
 vname_ram
-Z16 !s91 D:/vga/name_ram.v
-Z17 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/name_ram.v|
+Z56 !s91 D:/toplevel/name_ram.v
+Z57 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/name_ram.v|
+vncompare_to_zero
+R4
+R5
+vpriority_encoder_8
+R4
+R5
+vproc_clkgen
+Z58 !s91 D:/toplevel/proc_clkgen.v
+Z59 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/proc_clkgen.v|
+vr_tb
+Z60 !s91 D:/toplevel/r_tb.v
+Z61 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/r_tb.v|
 vram_infer
-Z18 !s91 D:/vga/ram_infer.v
-Z19 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/ram_infer.v|
+Z62 !s91 D:/toplevel/ram_infer.v
+Z63 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/ram_infer.v|
+vramtest
+Z64 !s91 D:/toplevel/memdriver.v
+Z65 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/memdriver.v|
+vRF
+Z66 !s91 D:/toplevel/RF.v
+Z67 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/RF.v|
 vRom
-Z20 !s91 D:/vga/Rom.v
-Z21 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/Rom.v|
+Z68 !s91 D:/toplevel/Rom.v
+Z69 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/Rom.v|
+vshift_left_2
+R4
+R5
+vshifter
+Z70 !s91 D:/toplevel/shifter.v
+Z71 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/shifter.v|
+vsim_clk_gen
+Z72 !s91 D:/toplevel/sim_clk_gen.v
+Z73 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/sim_clk_gen.v|
 vsimple_rom
-Z22 !s91 D:/vga/simple_rom.v
-Z23 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/simple_rom.v|
+Z74 !s91 D:/toplevel/simple_rom.v
+Z75 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/simple_rom.v|
 vsprite
-Z24 !s91 D:/vga/sprite.v
-Z25 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/sprite.v|
+Z76 !s91 D:/toplevel/sprite.v
+Z77 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/sprite.v|
 vsprite_mem
-Z26 !s91 D:/vga/sprite_mem.v
-Z27 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/sprite_mem.v|
+Z78 !s91 D:/toplevel/sprite_mem.v
+Z79 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/sprite_mem.v|
 vtick_logic
-Z28 !s91 D:/vga/tick_logic.v
-Z29 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/tick_logic.v|
+Z80 !s91 D:/toplevel/tick_logic.v
+Z81 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/tick_logic.v|
 vtile_rom
-Z30 !s91 D:/vga/tile_rom.v
-Z31 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/tile_rom.v|
+Z82 !s91 D:/toplevel/tile_rom.v
+Z83 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/tile_rom.v|
+vtoplevelfinal
+Z84 !s91 D:/toplevel/toplevelfinal.v
+Z85 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/toplevelfinal.v|
+vtri_state_buf
+R4
+R5
 vup_counter
-Z32 !s91 D:/vga/up_counter.v
-Z33 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/up_counter.v|
+Z86 !s91 D:/toplevel/up_counter.v
+Z87 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/up_counter.v|
 vvga_clk
-Z34 !s91 D:/vga/vga_clk.v
-Z35 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_clk.v|
+Z88 !s91 D:/toplevel/vga_clk.v
+Z89 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/vga_clk.v|
 vvga_driver
-Z36 !s91 D:/vga/vga_driver.v
-Z37 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_driver.v|
+Z90 !s91 D:/toplevel/vga_driver.v
+Z91 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/vga_driver.v|
 vvga_driver_tb
-Z38 !s91 D:/vga/vga_driver_tb.v
-Z39 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_driver_tb.v|
+Z92 !s91 D:/toplevel/vga_driver_tb.v
+Z93 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/vga_driver_tb.v|
 vvga_logic
-Z40 !s91 D:/vga/vga_logic.v
-Z41 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_logic.v|
+Z94 !s91 D:/toplevel/vga_logic.v
+Z95 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/vga_logic.v|
 vvgamult
-Z42 !s91 D:/vga/vgamult.v
-Z43 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vgamult.v|
+Z96 !s91 D:/toplevel/vgamult.v
+Z97 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/toplevel/vgamult.v|
+vxor2
+R4
+R5

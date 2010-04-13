@@ -10,23 +10,23 @@ Target Device  : xc2vp30
 Target Package : ff896
 Target Speed   : -6
 Mapper Version : virtex2p -- $Revision: 1.46.12.2 $
-Mapped Date    : Sun Apr 11 17:04:02 2010
+Mapped Date    : Tue Apr 13 15:29:42 2010
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    2
 Logic Utilization:
-  Number of Slice Flip Flops:         1,258 out of  27,392    4%
-  Number of 4 input LUTs:             3,310 out of  27,392   12%
+  Number of Slice Flip Flops:         1,252 out of  27,392    4%
+  Number of 4 input LUTs:             3,311 out of  27,392   12%
 Logic Distribution:
-  Number of occupied Slices:          2,304 out of  13,696   16%
-    Number of Slices containing only related logic:   2,304 out of   2,304 100%
-    Number of Slices containing unrelated logic:          0 out of   2,304   0%
+  Number of occupied Slices:          2,298 out of  13,696   16%
+    Number of Slices containing only related logic:   2,298 out of   2,298 100%
+    Number of Slices containing unrelated logic:          0 out of   2,298   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       3,377 out of  27,392   12%
-    Number used as logic:             3,054
-    Number used as a route-thru:         67
+  Total Number of 4 input LUTs:       3,380 out of  27,392   12%
+    Number used as logic:             3,055
+    Number used as a route-thru:         69
     Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
   Number of bonded IOBs:                 31 out of     556    5%
@@ -34,9 +34,9 @@ Logic Distribution:
   Number of BUFGMUXs:                     2 out of      16   12%
   Number of DCMs:                         1 out of       8   12%
 
-Peak Memory Usage:  215 MB
-Total REAL time to MAP completion:  12 secs 
-Total CPU time to MAP completion:   11 secs 
+Peak Memory Usage:  216 MB
+Total REAL time to MAP completion:  9 secs 
+Total CPU time to MAP completion:   9 secs 
 
 NOTES:
 
@@ -96,8 +96,8 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
    can be dramatically reduced by designating them as fast outputs.
 INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance
-   with the CLKFX and CLKFX180 outputs of the DCM comp vga_clk_gen1/DCM_INST,
-   consult the device Interactive Data Sheet.
+   with the CLKFX and CLKFX180 outputs of the DCM comp
+   vga/vga_clk_gen1/DCM_INST, consult the device Interactive Data Sheet.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
@@ -121,37 +121,37 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Strength | Rate |              |          | Delay    |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
-| blank                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
+| blank                              | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
 | clk_100mhz                         | IOB              | INPUT     | LVCMOS25             |          |      |              |          |          |
-| clk_25mhz                          | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| comp_sync                          | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| hsync                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<0>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<1>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<2>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<3>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<4>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<5>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<6>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_b<7>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<0>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<1>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<2>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<3>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<4>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<5>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<6>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_g<7>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<0>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<1>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<2>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<3>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<4>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<5>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<6>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
-| pixel_r<7>                         | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
+| clk_25mhz                          | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| comp_sync                          | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| hsync                              | IOB              | OUTPUT    | LVTTL                | 12       | SLOW |              |          |          |
+| pixel_b<0>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<1>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<2>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<3>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<4>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<5>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<6>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_b<7>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<0>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<1>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<2>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<3>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<4>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<5>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<6>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_g<7>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<0>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<1>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<2>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<3>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<4>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<5>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<6>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
+| pixel_r<7>                         | IOB              | OUTPUT    | LVTTL                | 6        | SLOW |              |          |          |
 | rst                                | IOB              | INPUT     | LVCMOS25             |          |      |              |          |          |
-| vsync                              | IOB              | OUTPUT    | LVCMOS25             | 12       | SLOW |              |          |          |
+| vsync                              | IOB              | OUTPUT    | LVTTL                | 12       | SLOW |              |          |          |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs

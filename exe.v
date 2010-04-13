@@ -36,6 +36,10 @@ module exe(input         clk,  reset, alu_src_E, dummyE, spriteE, fontE, backgro
   mux_4 #(32)  alu_out_Mux(alu_out, shift_out, pc_plus_8, data_out, 
                         alu_out_sel, alu_out_E);
 
+flip_flop_reset #(1) font_ena (clk, reset, fontE, font_en);
+flip_flop_reset #(1) font_ch (clk, reset, fontE & posE, font_ch_active);
+flip_flop_reset #(1) spr_pos (clk, reset, spriteE & posE, sprite_pos);
+flip_flop_reset #(1) spr_atr (clk, reset, spriteE & attrE, sprite_attr);
 
 flip_flop_enable #(10) spX (clk, reset, spriteE, src_a[9:0], sprite_x);
 flip_flop_enable #(9) spY (clk, reset, spriteE, src_b[8:0], sprite_y);
@@ -43,12 +47,8 @@ flip_flop_enable #(5) sp (clk, reset, spriteE, rd_E, sprite_sel);
 flip_flop_enable #(1) vis (clk, reset, spriteE, visiE, sprite_vis);
 flip_flop_enable #(11) fontAd (clk, reset, fontE, src_a[10:0], font_addr);
 flip_flop_enable #(4) fontDa (clk, reset, fontE, src_b[3:0], font_data);
-assign font_en = (fontE) ? 1'b1 : 1'b0;
-assign font_clr = (fontE) ? posE : 1'b0;
 assign bck = (backgroundE) ? {posE,visiE} : 2'b0;
-assign font_ch_active = (fontE) ? attrE: 1'b0;
 assign bck_ch_active = (backgroundE) ? attrE : 1'b0;
-assign sprite_pos = (spriteE) ? posE : 1'b0;
-assign sprite_attr = (spriteE) ? attrE : 1'b0;
+assign font_clr = 1'b0;
 endmodule
 

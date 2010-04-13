@@ -1,0 +1,42 @@
+library verilog;
+use verilog.vl_types.all;
+entity hazard_detection is
+    port(
+        clk             : in     vl_logic;
+        reset           : in     vl_logic;
+        rs_D            : in     vl_logic;
+        rt_D            : in     vl_logic;
+        rs_E            : in     vl_logic;
+        rt_E            : in     vl_logic;
+        rs_wr_DM        : in     vl_logic;
+        rt_wr_DM        : in     vl_logic;
+        rs_wr_EM        : in     vl_logic;
+        rs_wr_EW        : in     vl_logic;
+        rt_wr_EM        : in     vl_logic;
+        rt_wr_EW        : in     vl_logic;
+        rt_rs_ED        : in     vl_logic;
+        rt_rt_ED        : in     vl_logic;
+        rs_wr_DE        : in     vl_logic;
+        rt_wr_DE        : in     vl_logic;
+        regwriteE       : in     vl_logic;
+        regwriteM       : in     vl_logic;
+        regwriteW       : in     vl_logic;
+        memtoregE       : in     vl_logic;
+        memtoregM       : in     vl_logic;
+        branchD         : in     vl_logic;
+        jumpregD        : in     vl_logic;
+        instrackF       : in     vl_logic;
+        dataackM        : in     vl_logic;
+        hiloaccessD     : in     vl_logic;
+        mdrunE          : in     vl_logic;
+        stallF          : out    vl_logic;
+        stallD          : out    vl_logic;
+        stallE          : out    vl_logic;
+        stallM          : out    vl_logic;
+        stallW          : out    vl_logic;
+        flushD          : out    vl_logic;
+        flushE          : out    vl_logic;
+        flushM          : out    vl_logic;
+        activeexception : out    vl_logic
+    );
+end hazard_detection;

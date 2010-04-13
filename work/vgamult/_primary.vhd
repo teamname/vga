@@ -23,7 +23,6 @@ entity vgamult is
         fchange_active  : in     vl_logic;
         fwdata          : in     vl_logic_vector(3 downto 0);
         fwaddr          : in     vl_logic_vector(10 downto 0);
-        fwenable        : in     vl_logic;
-        clk_100mhz_buf  : out    vl_logic
+        fwenable        : in     vl_logic
     );
 end vgamult;

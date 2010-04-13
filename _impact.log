@@ -1,6 +1,6 @@
 iMPACT Version: 10.1.03
 
-iMPACT log file Started on Sun Apr 11 14:44:58 2010
+iMPACT log file Started on Tue Apr 13 15:31:45 2010
 
 // *** BATCH CMD : setMode -bs
 // *** BATCH CMD : setMode -bs
@@ -66,13 +66,13 @@ INFO:iMPACT:501 - '1': Added Device xcf32p successfully.
 ----------------------------------------------------------------------
 done.
 PROGRESS_END - End Operation.
-Elapsed time =      1 sec.
+Elapsed time =      0 sec.
 // *** BATCH CMD : identifyMPM 
 // *** BATCH CMD : setMode -bs
 1. Initializing V2Pro File...
 2. Initializing V2Pro File...
-// *** BATCH CMD : addDevice -p 3 -file "D:/vga/vga_driver.bit"
-'3': Loading file 'D:/vga/vga_driver.bit' ...
+// *** BATCH CMD : addDevice -p 3 -file "D:/toplevel/duck_hunt.bit"
+'3': Loading file 'D:/toplevel/duck_hunt.bit' ...
 done.
 INFO:iMPACT:2257 - Startup Clock has been changed to 'JtagClk' in the bitstream   stored in memory,
    but the original bitstream file remains unchanged.
@@ -116,7 +116,6 @@ INFO:iMPACT - '3': Checking done pin....done.
 '3': Programmed successfully.
 PROGRESS_END - End Operation.
 Elapsed time =      6 sec.
-Updating config file D:/vga/vga_driver.bit...
 // *** BATCH CMD : Program -p 3 
 Maximum TCK operating frequency for this device chain: 15000000.
 Validating chain...

@@ -18,8 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module duck_hunt(clk_100mhz, rst, clk_25mhz, blank, comp_sync, hsync, vsync, pixel_r, pixel_g, pixel_b
-    );
+module duck_hunt(clk_100mhz, rst, clk_25mhz, blank, comp_sync, hsync, vsync, pixel_r, pixel_g, pixel_b);
 	 input clk_100mhz;
     input rst;
 	 output clk_25mhz;
@@ -39,15 +38,12 @@ module duck_hunt(clk_100mhz, rst, clk_25mhz, blank, comp_sync, hsync, vsync, pix
 	 wire [3:0] font_data;
     wire [10:0] font_addr;
     wire [3:0] interrupts;
-	 wire clkin_ibufg_out, clk_100mhz_buf, locked_dcm;
 
 	 assign interrupts = 4'h0;
 
-vga_clk vga_clk_gen1(clk_100mhz, rst, clk_25mhz, clkin_ibufg_out, clk_100mhz_buf, locked_dcm);
-
-vgamult vga(clk_100mhz_buf, rst | ~locked_dcm, clk_25mhz, blank, comp_sync, hsync, vsync, pixel_r, pixel_g, pixel_b, sprite_x, sprite_y, sprite_vis, 
+vgamult vga(clk_100mhz, rst, clk_25mhz, blank, comp_sync, hsync, vsync, pixel_r, pixel_g, pixel_b, sprite_x, sprite_y, sprite_vis, 
 				sprite_pos, sprite_attr, sprite_sel, bck_ch_active, bck_sel, font_ch_active, font_data, font_addr, font_en);
 				
-toplevelfinal proc(clk_25mhz, rst | ~locked_dcm, sprite_x, sprite_y, sprite_sel, sprite_attr, sprite_pos, sprite_vis, bck_ch_active,
+toplevelfinal proc(clk_25mhz, rst, sprite_x, sprite_y, sprite_sel, sprite_attr, sprite_pos, sprite_vis, bck_ch_active,
 					font_ch_active, font_clr, font_en, font_addr, font_data, bck_sel, interrupts, audioVol, audioSel, audioEn);
 endmodule

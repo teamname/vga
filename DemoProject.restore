@@ -846,6 +846,7 @@ proc restore { { project_dir "" } } {
       "control.v" 
       "datapath.v" 
       "dec.v" 
+      "duck_hunt.ucf" 
       "duck_hunt.v" 
       "exe.v" 
       "fetch.v" 
@@ -871,7 +872,6 @@ proc restore { { project_dir "" } } {
       "utilities.v" 
       "vga_clk.xaw" 
       "vga_logic.v" 
-      "vgamult.ucf" 
       "vgamult.v"}
 
   HandleException {

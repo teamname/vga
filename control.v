@@ -145,8 +145,8 @@ module maindec(input is_nop, input  [5:0] op,
  assign fontD = op[1] & dummy;
  assign audioD = dummy & op[0] & op[2];
  assign randomD = (op[5:3] == 3'b111 && op[1:0] == 2'b11) ? 1'b1 : 1'b0;
- assign rti = op[5] & op[4] & !op[3] & !op[2] & !op[1] & !op[0]; //op: 110000 ret from interrupt
- assign cnt_int =  op[5] & op[4] & !op[3] & !op[2] & !op[1] & op[0]; //op : 110001 counter interrupt
+ assign rti = op[5] & op[4] & ~op[3] & ~op[2] & ~op[1] & ~op[0]; //op: 110000 ret from interrupt
+ assign cnt_int =  op[5] & op[4] & ~op[3] & ~op[2] & ~op[1] & op[0]; //op : 110001 counter interrupt
   always @ ( * )
     case(op)
       6'b000000: controls <= 20'b11000000001011000000; //R-type

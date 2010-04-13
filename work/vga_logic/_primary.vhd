@@ -8,7 +8,7 @@ entity vga_logic is
         comp_sync       : out    vl_logic;
         hsync           : out    vl_logic;
         vsync           : out    vl_logic;
-        pixel_x         : out    vl_logic_vector(9 downto 0);
-        pixel_y         : out    vl_logic_vector(9 downto 0)
+        pixel_x         : out    vl_logic_vector(8 downto 0);
+        pixel_y         : out    vl_logic_vector(7 downto 0)
     );
 end vga_logic;
