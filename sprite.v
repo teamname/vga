@@ -18,21 +18,20 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-`define TRANS 8'b10101010
+`define TRANS 8'b11100011
 
-module sprite(pixel_x, pixel_y, obj_on, pixel_r, pixel_g, pixel_b, data_in, load_pos, load_att, clk, rst);
+module sprite(pixel_x, pixel_y, obj_on, pixel_r, pixel_g, pixel_b, load_pos, load_att, clk, rst, x, y, visible);
 	parameter SPRITE_NUM = "sprite0.mem";
 	
-	input [8:0] pixel_x;
+	input [9:0] x;
+	input [8:0] pixel_x, y;
 	input [7:0] pixel_y;
 	output reg obj_on;
 	output reg [7:0] pixel_r, pixel_g, pixel_b;
-	input [31:0] data_in;
-	input load_pos, load_att, clk, rst;
+	input load_pos, load_att, clk, rst, visible;
 	
 	reg [8:0] current_x;
 	reg [7:0] current_y;
-	reg [1:0] depth;
 	reg visibility, h_flip, v_flip;
 	
 	wire inrange_x, inrange_y;
@@ -44,13 +43,13 @@ module sprite(pixel_x, pixel_y, obj_on, pixel_r, pixel_g, pixel_b, data_in, load
 	
 	always@(posedge clk) begin
 		if(rst) begin
-			current_x <= 9'h000;
-			current_y <= 8'h00;
+			current_x <= 9'd0;
+			current_y <= 8'd0;
 		end
 	
 		else if(load_pos) begin
-			current_x <= data_in[16:8];
-			current_y <= data_in[7:0];
+			current_x <= x[9:1];
+			current_y <= y[8:1];
 		end
 		else begin
 			current_x <= current_x;
@@ -60,31 +59,29 @@ module sprite(pixel_x, pixel_y, obj_on, pixel_r, pixel_g, pixel_b, data_in, load
 	
 	always@(posedge clk) begin
 		if(rst) begin
-			depth <= 2'h0;
 			visibility <= 1'b0;
 			h_flip <= 1'b0;
 			v_flip <= 1'b0;
 		end
 	
 		else if(load_att) begin
-			visibility <= data_in[0];
-			h_flip <= data_in[1];
-			v_flip <= data_in[2];
-			depth <= data_in[4:3];
+			visibility <= visible;
+			h_flip <= x[0];
+			v_flip <= y[0];
 		end
 	
 		else begin
-			depth <= depth;
 			visibility <= visibility;
 			h_flip <= h_flip;
 			v_flip <= v_flip;
 		end
 		end
 	
-	assign inrange_x = (pixel_x - current_x + 6'd32 > 0) ? 1'b1 : 1'b0;
-	assign inrange_y = (pixel_y - current_y + 6'd32 > 0) ? 1'b1 : 1'b0;
-	assign upper = pixel_y - current_y;
-	assign lower = pixel_x - current_x;
+	assign inrange_x = ((current_x <= pixel_x) && (current_x + 6'd32 > pixel_x)) ? 1'b1 : 1'b0;
+	assign inrange_y = ((current_y <= pixel_y) && (current_y + 6'd32 > pixel_y)) ? 1'b1 : 1'b0;
+	
+	assign upper = v_flip ? 31 - pixel_y - current_y : pixel_y - current_y;
+	assign lower = h_flip ? 31 - pixel_x - current_x : pixel_x - current_x;
 	
 	always@(posedge clk) begin
 		if(rst) begin
@@ -95,11 +92,11 @@ module sprite(pixel_x, pixel_y, obj_on, pixel_r, pixel_g, pixel_b, data_in, load
 			addr <= 10'h000;
 		end
 	
-		else if(inrange_x && inrange_y) begin //work to be done here
+		else if(inrange_x && inrange_y) begin
 			addr <= {upper, lower};
-			pixel_r <= {mem_data[7:5], 5'h00};
-			pixel_g <= {mem_data[4:2], 5'h00};
-			pixel_b <= {mem_data[1:0], 6'h00};
+			pixel_r <= {mem_data[7:5], 5'hFF};
+			pixel_g <= {mem_data[4:2], 5'hFF};
+			pixel_b <= {mem_data[1:0], 6'hFF};
 			
 			if(mem_data != `TRANS && visibility)
 				obj_on <= 1'b1;
@@ -115,5 +112,5 @@ module sprite(pixel_x, pixel_y, obj_on, pixel_r, pixel_g, pixel_b, data_in, load
 			obj_on <= 1'b0;
 			addr <= 10'h000;
 		end
-		end
+	end
 endmodule

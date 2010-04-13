@@ -1,0 +1,56 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    17:31:18 02/17/2008 
+// Design Name: 
+// Module Name:    draw_logic 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+
+
+module background(clk, rst, pixel_x, pixel_y, pixel_r, pixel_g, pixel_b);
+    input clk;
+    input rst;
+    input [9:0] pixel_x;
+    input [9:0] pixel_y;
+	 
+    output reg [7:0] pixel_r;
+    output reg [7:0] pixel_g;
+    output reg [7:0] pixel_b;
+	 
+	 wire [1:0] tile;
+	 wire [7:0] tile_data;
+	 wire [6:0] name_addr;
+	 wire [6:0] tile_num;
+	 
+    name_ram names(clk, name_addr, tile);
+	 tile_rom tiles(clk, tile_num, tile_data);
+    
+	 assign name_addr = {pixel_y[4:0], pixel_x[8:3]};
+	 assign tile_num = {tile[0], pixel_y[2:0], pixel_x[2:0]};
+	 
+    always@(*) begin
+	   pixel_r = 8'h00;
+		pixel_g = 8'h00;
+		pixel_b = 8'h00;
+		if(~rst) begin
+		    if(pixel_y < 239) 
+				if(pixel_x< 320) begin			
+					pixel_r = {tile_data[7:5], 5'b00000};
+					pixel_g = {tile_data[4:2], 5'b00000};
+					pixel_b = {tile_data[1:0], 6'b000000};
+		      end
+		end
+	 end
+endmodule

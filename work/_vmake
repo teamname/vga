@@ -1,0 +1,72 @@
+m255
+K3
+cModel Technology
+vbackground
+Z0 !s91 D:/vga/background.v
+Z1 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/background.v|
+vfont
+Z2 !s91 D:/vga/font.v
+Z3 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font.v|
+vfont_ram
+Z4 !s91 D:/vga/font_ram.v
+Z5 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font_ram.v|
+vfont_ram2
+Z6 !s91 D:/vga/font_ram2.v
+Z7 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font_ram2.v|
+vfont_rom
+Z8 !s91 D:/vga/font_rom.v
+Z9 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/font_rom.v|
+vglbl
+Z10 !s91 D:/vga/mult32.v
+Z11 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/mult32.v|
+vmain_logic
+Z12 !s91 D:/vga/main_logic.v
+Z13 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/main_logic.v|
+vmem
+Z14 !s91 D:/vga/mem.v
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/mem.v|
+vmult32
+R10
+R11
+vname_ram
+Z16 !s91 D:/vga/name_ram.v
+Z17 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/name_ram.v|
+vram_infer
+Z18 !s91 D:/vga/ram_infer.v
+Z19 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/ram_infer.v|
+vRom
+Z20 !s91 D:/vga/Rom.v
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/Rom.v|
+vsimple_rom
+Z22 !s91 D:/vga/simple_rom.v
+Z23 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/simple_rom.v|
+vsprite
+Z24 !s91 D:/vga/sprite.v
+Z25 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/sprite.v|
+vsprite_mem
+Z26 !s91 D:/vga/sprite_mem.v
+Z27 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/sprite_mem.v|
+vtick_logic
+Z28 !s91 D:/vga/tick_logic.v
+Z29 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/tick_logic.v|
+vtile_rom
+Z30 !s91 D:/vga/tile_rom.v
+Z31 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/tile_rom.v|
+vup_counter
+Z32 !s91 D:/vga/up_counter.v
+Z33 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/up_counter.v|
+vvga_clk
+Z34 !s91 D:/vga/vga_clk.v
+Z35 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_clk.v|
+vvga_driver
+Z36 !s91 D:/vga/vga_driver.v
+Z37 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_driver.v|
+vvga_driver_tb
+Z38 !s91 D:/vga/vga_driver_tb.v
+Z39 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_driver_tb.v|
+vvga_logic
+Z40 !s91 D:/vga/vga_logic.v
+Z41 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vga_logic.v|
+vvgamult
+Z42 !s91 D:/vga/vgamult.v
+Z43 !s90 -reportprogress|300|-work|work|-vopt|-nocovercells|D:/vga/vgamult.v|

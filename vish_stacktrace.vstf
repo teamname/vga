@@ -1,0 +1,30 @@
+# Current time Thu Apr 08 17:46:06 2010
+# ModelSim Stack Trace
+# Program = vish
+# Id = "6.4"
+# Version = "2008.06"
+# Date = "Jun 18 2008"
+# Platform = win32
+
+Exception c0000005 has occurred at address 005605ea. Traceback:
+# 0    0x005605ea: '<unknown (@0x5605ea)>'
+# 1    0x004fb4b0: 'Mtirpc_Init + 0x99190'
+# 2    0x004ead64: 'Mtirpc_Init + 0x88a44'
+# 3    0x004eac5b: 'Mtirpc_Init + 0x8893b'
+# 4    0x00512b91: 'Mtirpc_Init + 0xb0871'
+# 5    0x004eb2cd: 'Mtirpc_Init + 0x88fad'
+# 6    0x004bb3e5: 'Mtirpc_Init + 0x590c5'
+# 7    0x004e51ea: 'Mtirpc_Init + 0x82eca'
+# 8    0x1000d52b: 'TclEvalObjvInternal + 0x24b'
+# 9    0x1000d6a6: 'Tcl_EvalObjv + 0xa6'
+# 10   0x1000e24a: 'Tcl_EvalObjEx + 0x14a'
+# 11   0x10011e9a: 'Tcl_EvalObjCmd + 0x4a'
+# 12   0x1000d52b: 'TclEvalObjvInternal + 0x24b'
+# 13   0x1002cad7: 'TclCompEvalObj + 0x637'
+# 14   0x1002c590: 'TclCompEvalObj + 0xf0'
+# 15   0x1000e159: 'Tcl_EvalObjEx + 0x59'
+# 16   0x01529390: 'Itcl_EvalMemberCode + 0x210'
+# 17   0x04f9d060: '<unknown (@0x4f9d060)>'
+StackWalk failed 126
+# End of Stack Trace
+

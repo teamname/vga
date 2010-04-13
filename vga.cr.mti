@@ -1,0 +1,157 @@
+D:/vga/main_logic.v {1 {vlog -work work -vopt -nocovercells D:/vga/main_logic.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module main_logic
+
+Top level modules:
+	main_logic
+
+} {} {}} D:/vga/vga_logic.v {1 {vlog -work work -vopt -nocovercells D:/vga/vga_logic.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module vga_logic
+
+Top level modules:
+	vga_logic
+
+} {} {}} D:/vga/tile_rom.v {1 {vlog -work work -vopt -nocovercells D:/vga/tile_rom.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module tile_rom
+
+Top level modules:
+	tile_rom
+
+} {} {}} D:/vga/ram_infer.v {1 {vlog -work work -vopt -nocovercells D:/vga/ram_infer.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module ram_infer
+
+Top level modules:
+	ram_infer
+
+} {} {}} D:/vga/sprite_mem.v {1 {vlog -work work -vopt -nocovercells D:/vga/sprite_mem.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module sprite_mem
+
+Top level modules:
+	sprite_mem
+
+} {} {}} D:/vga/vga_driver_tb.v {1 {vlog -work work -vopt -nocovercells D:/vga/vga_driver_tb.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module vga_driver_tb
+
+Top level modules:
+	vga_driver_tb
+
+} {} {}} D:/vga/sprite.v {1 {vlog -work work -vopt -nocovercells D:/vga/sprite.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module sprite
+
+Top level modules:
+	sprite
+
+} {} {}} D:/vga/vgamult.v {1 {vlog -work work -vopt -nocovercells D:/vga/vgamult.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module vgamult
+
+Top level modules:
+	vgamult
+
+} {} {}} D:/vga/vga_driver.v {1 {vlog -work work -vopt -nocovercells D:/vga/vga_driver.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module vga_driver
+
+Top level modules:
+	vga_driver
+
+} {} {}} D:/vga/up_counter.v {1 {vlog -work work -vopt -nocovercells D:/vga/up_counter.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module up_counter
+
+Top level modules:
+	up_counter
+
+} {} {}} D:/vga/font_rom.v {1 {vlog -work work -vopt -nocovercells D:/vga/font_rom.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module font_rom
+
+Top level modules:
+	font_rom
+
+} {} {}} D:/vga/font_ram.v {1 {vlog -work work -vopt -nocovercells D:/vga/font_ram.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module font_ram
+
+Top level modules:
+	font_ram
+
+} {} {}} D:/vga/Rom.v {1 {vlog -work work -vopt -nocovercells D:/vga/Rom.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module Rom
+
+Top level modules:
+	Rom
+
+} {} {}} D:/vga/vga_clk.v {1 {vlog -work work -vopt -nocovercells D:/vga/vga_clk.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module vga_clk
+
+Top level modules:
+	vga_clk
+
+} {} {}} D:/vga/simple_rom.v {1 {vlog -work work -vopt -nocovercells D:/vga/simple_rom.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module simple_rom
+
+Top level modules:
+	simple_rom
+
+} {} {}} D:/vga/font.v {1 {vlog -work work -vopt -nocovercells D:/vga/font.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module font
+
+Top level modules:
+	font
+
+} {} {}} D:/vga/mem.v {1 {vlog -work work -vopt -nocovercells D:/vga/mem.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module mem
+
+Top level modules:
+	mem
+
+} {} {}} D:/vga/mult32.v {1 {vlog -work work -vopt -nocovercells D:/vga/mult32.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module mult32
+-- Compiling module glbl
+
+Top level modules:
+	mult32
+	glbl
+
+} {} {}} D:/vga/tick_logic.v {1 {vlog -work work -vopt -nocovercells D:/vga/tick_logic.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module tick_logic
+
+Top level modules:
+	tick_logic
+
+} {} {}} D:/vga/name_ram.v {1 {vlog -work work -vopt -nocovercells D:/vga/name_ram.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module name_ram
+
+Top level modules:
+	name_ram
+
+} {} {}} D:/vga/background.v {1 {vlog -work work -vopt -nocovercells D:/vga/background.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module background
+
+Top level modules:
+	background
+
+} {} {}} D:/vga/font_ram2.v {1 {vlog -work work -vopt -nocovercells D:/vga/font_ram2.v
+Model Technology ModelSim SE vlog 6.4 Compiler 2008.06 Jun 18 2008
+-- Compiling module font_ram2
+
+Top level modules:
+	font_ram2
+
+} {} {}}

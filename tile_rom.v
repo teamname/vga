@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module tile_rom(clk, addr, rdata);
-  parameter ADDR_WIDTH = 7;
+  parameter ADDR_WIDTH = 14;
   parameter DATA_WIDTH = 8;
   parameter ROM_DATA_FILE = "tiles.mem";
     input clk;

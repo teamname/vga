@@ -3,30 +3,30 @@ Xilinx Mapping Report File for Design 'vgamult'
 
 Design Information
 ------------------
-Command Line   : map -ise D:/DemoProject/DemoProject.ise -intstyle ise -p
+Command Line   : map -ise D:/vga/DemoProject.ise -intstyle ise -p
 xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vgamult_map.ncd
 vgamult.ngd vgamult.pcf 
 Target Device  : xc2vp30
 Target Package : ff896
 Target Speed   : -6
 Mapper Version : virtex2p -- $Revision: 1.46.12.2 $
-Mapped Date    : Tue Mar 02 18:09:41 2010
+Mapped Date    : Thu Mar 25 17:13:31 2010
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:            21 out of  27,392    1%
-  Number of 4 input LUTs:                60 out of  27,392    1%
+  Number of Slice Flip Flops:            40 out of  27,392    1%
+  Number of 4 input LUTs:                62 out of  27,392    1%
 Logic Distribution:
-  Number of occupied Slices:             32 out of  13,696    1%
-    Number of Slices containing only related logic:      32 out of      32 100%
-    Number of Slices containing unrelated logic:          0 out of      32   0%
+  Number of occupied Slices:             43 out of  13,696    1%
+    Number of Slices containing only related logic:      43 out of      43 100%
+    Number of Slices containing unrelated logic:          0 out of      43   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          60 out of  27,392    1%
+  Total Number of 4 input LUTs:          62 out of  27,392    1%
   Number of bonded IOBs:                 31 out of     556    5%
-  Number of RAMB16s:                      2 out of     136    1%
+  Number of RAMB16s:                      7 out of     136    5%
   Number of BUFGMUXs:                     2 out of      16   12%
   Number of DCMs:                         1 out of       8   12%
 

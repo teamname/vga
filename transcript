@@ -1,12 +1,425 @@
-# Reading E:/Modeltech_6.3f/tcl/vsim/pref.tcl 
-# //  ModelSim SE 6.3f Feb 28 2008 
-# //
-# //  Copyright 1991-2008 Mentor Graphics Corporation
-# //              All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND 
-# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
-# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
-# //  AND IS SUBJECT TO LICENSE TERMS.
-# //
-# OpenFile {E:/Documents and Settings/DemoProject/tile_rom.v} 
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+vsim work.vga_driver
+# vsim work.vga_driver 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: D:/vga/vga_clk.v(49): Module 'BUFG' is not defined.
+# ** Error: D:/vga/vga_clk.v(51): Module 'IBUFG' is not defined.
+# ** Error: D:/vga/vga_clk.v(53): Module 'BUFG' is not defined.
+# ** Error: D:/vga/vga_clk.v(72): Module 'DCM' is not defined.
+# Optimization failed
+# Error loading design
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v failed with 1 errors.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 1 failed with 1 error. 
+# Compile of vga_driver.v was successful.
+# Load canceled
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+vsim -novopt work.vga_driver
+# vsim -novopt work.vga_driver 
+# Refreshing D:\vga\work.vga_driver
+# Loading work.vga_driver
+# Refreshing D:\vga\work.vgamult
+# Loading work.vgamult
+# Refreshing D:\vga\work.vga_clk
+# Loading work.vga_clk
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(49): Instantiation of 'BUFG' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(51): Instantiation of 'IBUFG' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(53): Instantiation of 'BUFG' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(72): Instantiation of 'DCM' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# Refreshing D:\vga\work.vga_logic
+# Loading work.vga_logic
+# Refreshing D:\vga\work.main_logic
+# Loading work.main_logic
+# Refreshing D:\vga\work.background
+# Loading work.background
+# Refreshing D:\vga\work.name_ram
+# Loading work.name_ram
+# Refreshing D:\vga\work.tile_rom
+# Loading work.tile_rom
+# Refreshing D:\vga\work.font
+# Loading work.font
+# Refreshing D:\vga\work.font_ram
+# Loading work.font_ram
+# Refreshing D:\vga\work.font_rom
+# Loading work.font_rom
+# Refreshing D:\vga\work.sprite
+# Loading work.sprite
+# Refreshing D:\vga\work.sprite_mem
+# Loading work.sprite_mem
+# Error loading design
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+vsim -novopt work.vga_driver
+# vsim -novopt work.vga_driver 
+# Refreshing D:\vga\work.vga_driver
+# Loading work.vga_driver
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+add wave \
+{sim:/vga_driver/next_load_att } \
+{sim:/vga_driver/load_att } \
+{sim:/vga_driver/next_visable } \
+{sim:/vga_driver/visable } \
+{sim:/vga_driver/sprite_sel } \
+{sim:/vga_driver/next_sprite_sel } \
+{sim:/vga_driver/next_counter } \
+{sim:/vga_driver/counter } \
+{sim:/vga_driver/state } \
+{sim:/vga_driver/next_state } \
+{sim:/vga_driver/clock } 
+run -all
+# Break key hit 
+# Break in Module vga_driver at D:/vga/vga_driver.v line 49
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v failed with 1 errors.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 1 failed with 1 error. 
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v failed with 1 errors.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 1 failed with 1 error. 
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v failed with 1 errors.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 1 failed with 1 error. 
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+restart
+# Refreshing D:\vga\work.vga_driver
+# Loading work.vga_driver
+run -all
+# Break key hit 
+# Break in Module vga_driver at D:/vga/vga_driver.v line 50
+add wave \
+{sim:/vga_driver/reset } 
+restart
+run -all
+# Break key hit 
+# Break in Module vga_driver at D:/vga/vga_driver.v line 51
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+restart
+# Refreshing D:\vga\work.vga_driver
+# Loading work.vga_driver
+run -all
+# Break key hit 
+# Simulation stop requested.
+# Compile of vgamult.v was successful.
+# Compile of background.v was successful.
+# Compile of font.v was successful.
+# Compile of font_ram2.v was successful.
+# Compile of font_ram.v was successful.
+# Compile of font_rom.v was successful.
+# Compile of main_logic.v was successful.
+# Compile of mem.v was successful.
+# Compile of mult32.v was successful.
+# Compile of name_ram.v was successful.
+# Compile of ram_infer.v was successful.
+# Compile of Rom.v was successful.
+# Compile of simple_rom.v was successful.
+# Compile of sprite.v was successful.
+# Compile of sprite_mem.v was successful.
+# Compile of tick_logic.v was successful.
+# Compile of tile_rom.v was successful.
+# Compile of up_counter.v was successful.
+# Compile of vga_clk.v was successful.
+# Compile of vga_driver.v was successful.
+# Compile of vga_logic.v was successful.
+# Compile of vga_driver_tb.v was successful.
+# 22 compiles, 0 failed with no errors. 
+add wave \
+{sim:/vga_driver/next_load_att } \
+{sim:/vga_driver/load_att } \
+{sim:/vga_driver/next_visable } \
+{sim:/vga_driver/visable } \
+{sim:/vga_driver/sprite_sel } \
+{sim:/vga_driver/next_sprite_sel } \
+{sim:/vga_driver/next_counter } \
+{sim:/vga_driver/counter } \
+{sim:/vga_driver/state } \
+{sim:/vga_driver/next_state } \
+{sim:/vga_driver/clock } \
+{sim:/vga_driver/reset } 
+restart
+# Refreshing D:\vga\work.vga_driver
+# Loading work.vga_driver
+# Refreshing D:\vga\work.vgamult
+# Loading work.vgamult
+# Refreshing D:\vga\work.vga_clk
+# Loading work.vga_clk
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(49): Instantiation of 'BUFG' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(51): Instantiation of 'IBUFG' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(53): Instantiation of 'BUFG' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# ** Error: (vsim-3033) D:/vga/vga_clk.v(72): Instantiation of 'DCM' failed. The design unit was not found.
+#         Region: /vga_driver/vga/vga_clk_gen1
+#         Searched libraries:
+#             D:\vga\work
+# Refreshing D:\vga\work.vga_logic
+# Loading work.vga_logic
+# Refreshing D:\vga\work.main_logic
+# Loading work.main_logic
+# Refreshing D:\vga\work.background
+# Loading work.background
+# Refreshing D:\vga\work.name_ram
+# Loading work.name_ram
+# Refreshing D:\vga\work.tile_rom
+# Loading work.tile_rom
+# Refreshing D:\vga\work.font
+# Loading work.font
+# Refreshing D:\vga\work.font_ram
+# Loading work.font_ram
+# Refreshing D:\vga\work.font_rom
+# Loading work.font_rom
+# Refreshing D:\vga\work.sprite
+# Loading work.sprite
+# Refreshing D:\vga\work.sprite_mem
+# Loading work.sprite_mem

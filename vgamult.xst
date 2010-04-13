@@ -1,5 +1,5 @@
-set -tmpdir "D:/DemoProject/xst/projnav.tmp"
-set -xsthdpdir "D:/DemoProject/xst"
+set -tmpdir "D:/vga/xst/projnav.tmp"
+set -xsthdpdir "D:/vga/xst"
 run
 -ifn vgamult.prj
 -ifmt mixed

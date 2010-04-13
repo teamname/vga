@@ -1,0 +1,12 @@
+# Output products list for <font_ram2>
+font_ram2.asy
+font_ram2.ngc
+font_ram2.sym
+font_ram2.v
+font_ram2.veo
+font_ram2.vhd
+font_ram2.vho
+font_ram2.xco
+font_ram2_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+font_ram2_flist.txt
+font_ram2_xmdf.tcl

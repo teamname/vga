@@ -1,0 +1,118 @@
+--------------------------------------------------------------------------------
+Release 10.1.03 Trace  (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\10.1\ISE\bin\nt\unwrapped\trce.exe -ise D:/vga/DemoProject.ise
+-intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr
+vga_driver.pcf -ucf vgamult.ucf
+
+Design file:              vga_driver.ncd
+Physical constraint file: vga_driver.pcf
+Device,package,speed:     xc2vp30,ff896,-6 (PRODUCTION 1.94 2008-07-25)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk_100mhz
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+rst         |   12.915(R)|   -2.363(R)|clk               |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clk_100mhz to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+blank       |    8.209(R)|clk_25mhz_OBUF    |   0.000|
+hsync       |    7.151(R)|clk_25mhz_OBUF    |   0.000|
+pixel_b<0>  |    8.726(R)|clk               |   0.000|
+pixel_b<1>  |    8.892(R)|clk               |   0.000|
+pixel_b<2>  |    8.747(R)|clk               |   0.000|
+pixel_b<3>  |    8.572(R)|clk               |   0.000|
+pixel_b<4>  |    8.901(R)|clk               |   0.000|
+pixel_b<5>  |    9.072(R)|clk               |   0.000|
+pixel_b<6>  |    9.991(R)|clk               |   0.000|
+            |   10.837(R)|clk_25mhz_OBUF    |   0.000|
+pixel_b<7>  |    9.246(R)|clk               |   0.000|
+            |   10.076(R)|clk_25mhz_OBUF    |   0.000|
+pixel_g<0>  |    8.473(R)|clk               |   0.000|
+pixel_g<1>  |    8.607(R)|clk               |   0.000|
+pixel_g<2>  |    8.345(R)|clk               |   0.000|
+pixel_g<3>  |    8.794(R)|clk               |   0.000|
+pixel_g<4>  |    8.535(R)|clk               |   0.000|
+pixel_g<5>  |   10.557(R)|clk               |   0.000|
+            |   11.787(R)|clk_25mhz_OBUF    |   0.000|
+pixel_g<6>  |   10.373(R)|clk               |   0.000|
+            |   11.603(R)|clk_25mhz_OBUF    |   0.000|
+pixel_g<7>  |   10.551(R)|clk               |   0.000|
+            |   11.781(R)|clk_25mhz_OBUF    |   0.000|
+pixel_r<0>  |    8.547(R)|clk               |   0.000|
+pixel_r<1>  |    8.983(R)|clk               |   0.000|
+pixel_r<2>  |    8.814(R)|clk               |   0.000|
+pixel_r<3>  |    8.718(R)|clk               |   0.000|
+pixel_r<4>  |    8.544(R)|clk               |   0.000|
+pixel_r<5>  |   10.756(R)|clk               |   0.000|
+            |   11.986(R)|clk_25mhz_OBUF    |   0.000|
+pixel_r<6>  |   10.682(R)|clk               |   0.000|
+            |   11.912(R)|clk_25mhz_OBUF    |   0.000|
+pixel_r<7>  |   10.498(R)|clk               |   0.000|
+            |   11.728(R)|clk_25mhz_OBUF    |   0.000|
+vsync       |    7.630(R)|clk_25mhz_OBUF    |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk_100mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_100mhz     |    7.520|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+clk_100mhz     |clk_25mhz      |    5.485|
+rst            |pixel_b<6>     |   15.962|
+rst            |pixel_b<7>     |   15.217|
+rst            |pixel_g<5>     |   17.148|
+rst            |pixel_g<6>     |   16.964|
+rst            |pixel_g<7>     |   17.142|
+rst            |pixel_r<5>     |   17.347|
+rst            |pixel_r<6>     |   17.273|
+rst            |pixel_r<7>     |   17.089|
+---------------+---------------+---------+
+
+
+Analysis completed Sun Apr 11 14:51:17 2010 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 145 MB
+
+
+

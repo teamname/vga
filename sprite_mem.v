@@ -24,8 +24,9 @@ module sprite_mem(clk, addr, rdata);
     input [9:0] addr;
     output reg [7:0] rdata;
 
-    reg [7:0] MY_ROM [0:2**10];
+    reg [7:0] MY_ROM [0:2**10-1];
     initial $readmemb(ROM_DATA_FILE, MY_ROM);
     always@(posedge clk) rdata <= MY_ROM[addr];
 
 endmodule
+

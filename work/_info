@@ -1,0 +1,328 @@
+m255
+K3
+13
+cModel Technology
+dI:\ECE 554\miniproject
+vbackground
+V=L8Xz0oBH7Hff3JogK7VS2
+r1
+31
+Ij1;LVYKZTDLTYHggL>6_10
+Z0 dD:\vga
+w1268598837
+8D:/vga/background.v
+FD:/vga/background.v
+L0 22
+Z1 OE;L;6.4;39
+Z2 o-work work -nocovercells -L mtiAvm -L mtiOvm -L mtiUPF
+!s85 0
+!s100 9MJWJGYI[d]I5`[0lj<H^2
+vfont
+VI:TgdNGTCMP?dhH=AC]BT1
+r1
+31
+Il8ogJ^FPHCCY3TC]T]UeD1
+Z3 dD:\vga
+w1270759003
+8D:/vga/font.v
+FD:/vga/font.v
+L0 21
+R1
+R2
+!s85 0
+!s100 geZWaCo>;R4?D4ZTVAAWB2
+vfont_ram
+VWk0ULOOL4G`Sl]M0Q4IeI2
+r1
+31
+IN[dVmBW0RnA9^:Xiazh:R2
+R3
+w1270758968
+8D:/vga/font_ram.v
+FD:/vga/font_ram.v
+L0 21
+R1
+R2
+!s85 0
+!s100 =`eAQ>7X=<?0Z5[FnUzFn1
+vfont_ram2
+IdQbQEJb45XVL]Lb5z4Ozm3
+VPIe5LB3kS^Xj=f>5R8GW^2
+R3
+w1270757106
+8D:/vga/font_ram2.v
+FD:/vga/font_ram2.v
+L0 40
+R1
+r1
+31
+R2
+!s100 j?6hM<?oY2=CoA=Pc3DXj3
+!s85 0
+vfont_rom
+V>o6W?Wczn4Y8T[PmU8l_51
+r1
+31
+I5hk[P:?Nd8KXRgOgh=J8m3
+R3
+w1268780392
+8D:/vga/font_rom.v
+FD:/vga/font_rom.v
+L0 21
+R1
+R2
+!s85 0
+!s100 JTLXRiD6aegJY;bJI6A232
+vglbl
+IV0Ad]0RZJ2=gaeUTYDQi]2
+VnN]4Gon>inod6>M^M2[SV1
+R3
+Z4 w1266693678
+Z5 8D:/vga/mult32.v
+Z6 FD:/vga/mult32.v
+L0 4548
+R1
+r1
+31
+R2
+!s100 <5UHLHW?Z`JPhUQdY`j:I3
+!s85 0
+vmain_logic
+VA2VZ5ze3za@6MSimi08:a3
+r1
+31
+Iac0X4z0PDYNQcmngjYf4g3
+R3
+w1270759389
+8D:/vga/main_logic.v
+FD:/vga/main_logic.v
+L0 21
+R1
+R2
+!s85 0
+!s100 2Z4;MPYFUHeS^1X0JHhZo0
+vmem
+I8dH1D_>N`Fb=VRmHc=?K<3
+VBOZR[4X=eY5<?3c7j[BSS0
+R3
+w1266975578
+8D:/vga/mem.v
+FD:/vga/mem.v
+L0 40
+R1
+r1
+31
+R2
+!s100 ?XkJHL87QC:b]HKN<K`Mf0
+!s85 0
+vmult32
+IeJ=`0MFaK6;g0;gQc`4>`2
+V@_FSSgHBjPMdzaU;]]k5d2
+R3
+R4
+R5
+R6
+L0 36
+R1
+r1
+31
+R2
+!s100 EQ70R4L_`Bi:<UlH]H2K23
+!s85 0
+vname_ram
+VB]_5`WY<57`VILz;X]5;E1
+r1
+31
+IoQ:?`d3jW5J;zMklm^0CH0
+R3
+w1268351626
+8D:/vga/name_ram.v
+FD:/vga/name_ram.v
+L0 21
+R1
+R2
+!s85 0
+!s100 FS8l1:gg3REnZ8<3bEX[g2
+vram_infer
+IMUGC;9X51i_@@>T3jF7hg3
+VKfbW9S1gCP5X3T2BfUaz63
+R3
+w1263850060
+8D:/vga/ram_infer.v
+FD:/vga/ram_infer.v
+L0 1
+R1
+r1
+31
+R2
+!s100 QO;]ge7<=IAU_>WS5`c8K1
+!s85 0
+vRom
+I9SMm7`U:]TBaO2W:ZdM:Q2
+VQ:eh?2Qei3bi50ZnXczhz0
+R3
+w1266975370
+8D:/vga/Rom.v
+FD:/vga/Rom.v
+L0 21
+R1
+r1
+31
+R2
+n@rom
+!s100 lYMFXWGb7z^hjYF99`_0B1
+!s85 0
+vsimple_rom
+I=31zFI7hK<j?e@f1XkMZ[1
+VgngXKORNTKZ<7nMAaO`ec3
+R3
+w1266693340
+8D:/vga/simple_rom.v
+FD:/vga/simple_rom.v
+L0 21
+R1
+r1
+31
+R2
+!s100 7G^5b2KfLZh?JVP:g0NTR3
+!s85 0
+vsprite
+VTnn2Vfz[^ZZGbOJK[?fjW1
+r1
+31
+Id3@N01Kn884QTeQMER_B@0
+R3
+w1270763403
+8D:/vga/sprite.v
+FD:/vga/sprite.v
+L0 23
+R1
+R2
+!s85 0
+!s100 1B`TN^b>4]`lT04d9Q;=O1
+vsprite_mem
+V<08eTSRCf8O<?1Gj2mXKR3
+r1
+!s85 0
+31
+IM1ZYB1NaeRiPn:>`Dgekc2
+R3
+w1268413549
+8D:/vga/sprite_mem.v
+FD:/vga/sprite_mem.v
+L0 21
+R1
+R2
+!s100 Ed<5j9zLAn9Od:H5F@mVl1
+vtick_logic
+IGFjC<ZhhzhP8eBZEl>b7<3
+V]Qf`4^]lmBEdM9?bMhdBd3
+R3
+w1266693268
+8D:/vga/tick_logic.v
+FD:/vga/tick_logic.v
+L0 22
+R1
+r1
+31
+R2
+!s100 6QlI:@Ti?UzkGC0;Tj7<11
+!s85 0
+vtile_rom
+VzM;86fRQ:]ooo>?fHR6de2
+r1
+31
+IB?nOS@SS;1Ob=L@e;7M`O3
+R3
+w1268351988
+8D:/vga/tile_rom.v
+FD:/vga/tile_rom.v
+L0 21
+R1
+R2
+!s85 0
+!s100 ^^QC[2f[]leVC9iSzm?=31
+vup_counter
+I<JcXccznIWHQ@E5R:Ab?A2
+V8LG^Sfo_Se6e0_SDciKKe0
+R3
+w1266693930
+8D:/vga/up_counter.v
+FD:/vga/up_counter.v
+L0 3
+R1
+r1
+31
+R2
+!s100 kYhQhJ]TeO5QToGl36dnN2
+!s85 0
+vvga_clk
+VmOkT0>`l3^[=<5:ge0Y<T1
+r1
+31
+IK<OnmGQTUzcgd=QT27QVK1
+R3
+w1268598769
+8D:/vga/vga_clk.v
+FD:/vga/vga_clk.v
+L0 25
+R1
+R2
+!s85 0
+!s100 @KPUXBjl1Ph>IZh3V1[Em3
+vvga_driver
+VZ5I3hC_X_;K=SH1e2a:Ia1
+r1
+31
+IkDa=9W6POMEXX;m5JIY]O2
+R3
+w1271014555
+8D:/vga/vga_driver.v
+FD:/vga/vga_driver.v
+L0 21
+R1
+R2
+!s85 0
+!s100 ]k72X[6MU@[JDbz;b3cQU0
+vvga_driver_tb
+I?Vh^LGib7jm7eMAUlJ5Li1
+V53iXh?eLZ24_k9hjF1_<E2
+R3
+w1270766191
+8D:/vga/vga_driver_tb.v
+FD:/vga/vga_driver_tb.v
+L0 1
+R1
+r1
+31
+R2
+!s100 EU_7L[7oZ<7z9dV35kF=V0
+!s85 0
+vvga_logic
+VK3i7h8kVd^fkO`RN3PmLY3
+r1
+31
+IHl:OOfoDkbXR@R<Sj@H[V2
+R3
+w1267405570
+8D:/vga/vga_logic.v
+FD:/vga/vga_logic.v
+L0 21
+R1
+R2
+!s85 0
+!s100 f=9klUET;VJ74fTTo20261
+vvgamult
+V;E=eZ54D7PO:N84gM<b3l1
+r1
+31
+I8WFVE2AfS@i>^zdWGNHk53
+R3
+w1271014076
+8D:/vga/vgamult.v
+FD:/vga/vgamult.v
+L0 21
+R1
+R2
+!s85 0
+!s100 RFZ5l=k@RV;lSzJnlOE3=2

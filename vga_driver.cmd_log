@@ -1,0 +1,76 @@
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vga_driver.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vga_driver.ucf
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vga_driver.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd
+xst -ise "D:/vga/DemoProject.ise" -intstyle ise -ifn "D:/vga/vga_driver.xst" -ofn "D:/vga/vga_driver.syr"
+ngdbuild -ise "D:/vga/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "vga_driver.ngc" vga_driver.ngd
+map -ise "D:/vga/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o vga_driver_map.ncd vga_driver.ngd vga_driver.pcf
+par -ise "D:/vga/DemoProject.ise" -w -intstyle ise -ol std -t 1 vga_driver_map.ncd vga_driver.ncd vga_driver.pcf
+trce -ise "D:/vga/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml vga_driver vga_driver.ncd -o vga_driver.twr vga_driver.pcf -ucf vgamult.ucf
+bitgen -ise "D:/vga/DemoProject.ise" -intstyle ise -f vga_driver.ut vga_driver.ncd

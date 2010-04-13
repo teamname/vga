@@ -1,0 +1,39 @@
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+ngdbuild -ise "D:/toplevel/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "duck_hunt.ngc" duck_hunt.ngd
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+ngdbuild -ise "D:/toplevel/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "duck_hunt.ngc" duck_hunt.ngd
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+ngdbuild -ise "D:/toplevel/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "duck_hunt.ngc" duck_hunt.ngd
+map -ise "D:/toplevel/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o duck_hunt_map.ncd duck_hunt.ngd duck_hunt.pcf
+par -ise "D:/toplevel/DemoProject.ise" -w -intstyle ise -ol std -t 1 duck_hunt_map.ncd duck_hunt.ncd duck_hunt.pcf
+trce -ise "D:/toplevel/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml duck_hunt duck_hunt.ncd -o duck_hunt.twr duck_hunt.pcf -ucf vgamult.ucf
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+ngdbuild -ise "D:/toplevel/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "duck_hunt.ngc" duck_hunt.ngd
+map -ise "D:/toplevel/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o duck_hunt_map.ncd duck_hunt.ngd duck_hunt.pcf
+par -ise "D:/toplevel/DemoProject.ise" -w -intstyle ise -ol std -t 1 duck_hunt_map.ncd duck_hunt.ncd duck_hunt.pcf
+trce -ise "D:/toplevel/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml duck_hunt duck_hunt.ncd -o duck_hunt.twr duck_hunt.pcf -ucf vgamult.ucf
+bitgen -ise "D:/toplevel/DemoProject.ise" -intstyle ise -f duck_hunt.ut duck_hunt.ncd
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+ngdbuild -ise "D:/toplevel/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "duck_hunt.ngc" duck_hunt.ngd
+map -ise "D:/toplevel/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o duck_hunt_map.ncd duck_hunt.ngd duck_hunt.pcf
+par -ise "D:/toplevel/DemoProject.ise" -w -intstyle ise -ol std -t 1 duck_hunt_map.ncd duck_hunt.ncd duck_hunt.pcf
+trce -ise "D:/toplevel/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml duck_hunt duck_hunt.ncd -o duck_hunt.twr duck_hunt.pcf -ucf vgamult.ucf
+bitgen -ise "D:/toplevel/DemoProject.ise" -intstyle ise -f duck_hunt.ut duck_hunt.ncd
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+xst -ise "D:/toplevel/DemoProject.ise" -intstyle ise -ifn "D:/toplevel/duck_hunt.xst" -ofn "D:/toplevel/duck_hunt.syr"
+ngdbuild -ise "D:/toplevel/DemoProject.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-6 "duck_hunt.ngc" duck_hunt.ngd
+map -ise "D:/toplevel/DemoProject.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr off -k 4 -c 100 -tx off -o duck_hunt_map.ncd duck_hunt.ngd duck_hunt.pcf
+par -ise "D:/toplevel/DemoProject.ise" -w -intstyle ise -ol std -t 1 duck_hunt_map.ncd duck_hunt.ncd duck_hunt.pcf
+trce -ise "D:/toplevel/DemoProject.ise" -intstyle ise -v 3 -s 6 -xml duck_hunt duck_hunt.ncd -o duck_hunt.twr duck_hunt.pcf -ucf vgamult.ucf
+bitgen -ise "D:/toplevel/DemoProject.ise" -intstyle ise -f duck_hunt.ut duck_hunt.ncd
+bitgen -ise "D:/toplevel/DemoProject.ise" -intstyle ise -f duck_hunt.ut duck_hunt.ncd

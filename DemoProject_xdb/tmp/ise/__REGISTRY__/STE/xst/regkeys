@@ -1,5 +1,5 @@
 CommandLine
-C:\Xilinx\10.1\ISE\bin\nt\unwrapped\xst.exe -ise D:/DemoProject/DemoProject.ise -intstyle ise -ifn D:/DemoProject/vgamult.xst -ofn D:/DemoProject/vgamult.syr -finalclean 1
+C:\Xilinx\10.1\ISE\bin\nt\unwrapped\xst.exe -ise D:/toplevel/DemoProject.ise -intstyle ise -ifn D:/toplevel/duck_hunt.xst -ofn D:/toplevel/duck_hunt.syr -finalclean 1
 s
 FormatString
 xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]

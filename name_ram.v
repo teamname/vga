@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module name_ram(clk, addr, rdata);
   parameter ADDR_WIDTH = 11;
-  parameter DATA_WIDTH = 2;
+  parameter DATA_WIDTH = 8;
   parameter ROM_DATA_FILE = "background.mem";
     input clk;
     input [ADDR_WIDTH-1:0] addr;

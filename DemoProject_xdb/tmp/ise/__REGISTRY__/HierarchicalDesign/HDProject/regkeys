@@ -2,7 +2,7 @@ CommandLine-Map
 
 s
 CommandLine-Ngdbuild
-C:\Xilinx\10.1\ISE\bin\nt\unwrapped\ngdbuild.exe -ise D:/DemoProject/DemoProject.ise -intstyle ise -dd _ngo -nt timestamp -i -p xc2vp30-ff896-6 vgamult.ngc vgamult.ngd
+C:\Xilinx\10.1\ISE\bin\nt\unwrapped\ngdbuild.exe -ise D:/toplevel/DemoProject.ise -intstyle ise -dd _ngo -nt timestamp -i -p xc2vp30-ff896-6 duck_hunt.ngc duck_hunt.ngd
 s
 CommandLine-Par
 
@@ -11,7 +11,7 @@ CommandLine-Xst
 
 s
 Previous-NGD
-vgamult_prev_built.ngd
+duck_hunt_prev_built.ngd
 s
 Previous-NGM
 
